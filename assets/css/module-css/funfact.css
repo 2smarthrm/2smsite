@@ -1,0 +1,115 @@
+
+/** funfact-section **/
+
+.funfact-section{
+  position: relative;
+}
+
+.funfact-block-one .inner-box{
+  position: relative;
+  display: block;
+  border: 1px solid #E7E7E7;
+  border-radius: 10px;
+  padding: 32px 15px 30px 15px;
+  margin-bottom: 30px;
+  transition: all 500ms ease;
+}
+
+.funfact-block-one .inner-box:hover{
+  
+}
+
+.funfact-block-one .inner-box .count-outer{
+  position: relative;
+  display: block;
+  font-size: 48px;
+  line-height: 50px;
+  font-family: var(--title-font);
+  color: var(--title-color);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.funfact-block-one .inner-box p{
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.funfact-section.alternat-2 .funfact-block-one .inner-box{
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.06);
+}
+
+
+/** rtl-css **/
+
+
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+
+}
+
+@media only screen and (max-width: 767px){
+  .funfact-section.pb_90{
+    padding-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+  
+}
+
+@media only screen and (max-width: 499px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

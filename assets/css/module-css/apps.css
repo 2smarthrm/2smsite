@@ -1,0 +1,251 @@
+
+/** apps-section **/
+
+.apps-section{
+  position: relative;
+  background: var(--secondary-color);
+}
+
+.apps-section .sec-title h2{
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.apps-section .pattern-layer{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.content_block_four .content-box{
+  position: relative;
+  display: block;
+}
+
+.content_block_four .content-box .sec-title p{
+  font-size: 18px;
+  line-height: 30px;
+  color: #fff;
+  margin-top: 14px;
+  max-width: 480px;
+}
+
+.content_block_four .content-box .download-btn{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.content_block_four .content-box .download-btn a{
+  position: relative;
+  display: inline-block;
+  width: 182px;
+  background: #fff;
+  padding: 11px 20px 11px 55px;
+  font-size: 18px;
+  line-height: 20px;
+  font-family: var(--title-font);
+  font-weight: 600;
+  color: var(--title-color);
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+.content_block_four .content-box .download-btn a:hover{
+  
+}
+
+.content_block_four .content-box .download-btn a img{
+  position: absolute;
+  left: 16px;
+  top: 13px;
+}
+
+.content_block_four .content-box .download-btn a:last-child{
+  margin: 0px !important;
+}
+
+.content_block_four .content-box .download-btn a span{
+  position: relative;
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.apps-section .map-content{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 50%;
+  height: 100%;
+}
+
+.apps-section .map-content .map-inner{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.apps-section .map-content iframe{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.apps-section .map-content .map-author{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  width: 365px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 30px 23px 114px;
+  z-index: 1;
+}
+
+.apps-section .map-content .map-author .author-thumb{
+  position: absolute;
+  left: 19px;
+  top: 17px;
+  border-radius: 50%;
+  width: 83px;
+  height: 83px;
+}
+
+.apps-section .map-content .map-author .author-thumb img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.apps-section .map-content .map-author h6{
+  position: relative;
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.apps-section .map-content .map-author .rating-box{
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 28px;
+  padding-left: 21px;
+}
+
+.apps-section .map-content .map-author .rating-box img{
+  position: absolute;
+  left: 0px;
+  top: 6px;
+}
+
+.apps-section .map-content .map-author p{
+  font-size: 12px;
+  line-height: 28px;
+}
+
+
+/** rtl-css **/
+
+.rtl .apps-section .map-content{
+  right: inherit;
+  left: 0px;
+}
+
+.rtl .content_block_four .content-box .download-btn a{
+  margin-right: 0px;
+  margin-left: 15px;
+}
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .apps-section .map-content{
+    position: relative;
+    width: 100%;
+  }
+
+  .apps-section .map-content .map-inner{
+    position: relative;
+    height: 500px;
+  }
+
+  .content_block_four .content-box{
+    margin-bottom: 40px;
+  }
+
+  .content_block_four .content-box .sec-title p{
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .apps-section{
+    padding: 70px 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+  
+}
+
+@media only screen and (max-width: 499px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

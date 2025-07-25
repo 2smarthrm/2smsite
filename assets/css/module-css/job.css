@@ -1,0 +1,470 @@
+
+/** job-form-section **/
+
+.job-form-section{
+  position: relative;
+  background: var(--secondary-color);
+}
+
+.job-form-section .sec-title p{
+  color: #fff;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 18px;
+}
+
+.job-form-section .form-inner{
+  position: relative;
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 40px 30px;
+  padding-bottom: 10px;
+}
+
+.job-form-section .form-inner .title-box{
+  position: relative;
+  display: block;
+  padding: 17px 0px 17px 120px;
+  margin-bottom: 40px;
+}
+
+.job-form-section .form-inner .title-box .icon-box{
+  position: absolute;
+  display: inline-block;
+  left: 0px;
+  top: 0px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  font-size: 30px;
+}
+
+.job-form-section .form-inner .title-box  h3{
+  position: relative;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.job-form-section .form-inner .title-box p{
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.job-form-section .form-inner .form-group{
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.job-form-section .form-inner .select-box{
+  min-height: 60px;
+}
+
+.job-form-section .form-inner .form-group input[type='text'],
+.job-form-section .form-inner .form-group input[type='email'],
+.job-form-section .form-inner .form-group textarea,
+.job-form-section .form-inner .form-group .nice-select{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 60px;
+  border: 1px solid #e5e5e5;
+  border-radius: 40px;
+  padding: 10px 25px;
+  font-size: 16px;
+  color: var(--text-color);
+  transition: all 500ms ease;
+}
+
+.job-form-section .form-inner .form-group .nice-select{
+  padding: 0px 25px;
+  line-height: 60px;
+}
+
+.job-form-section .form-inner .form-group input:focus,
+.job-form-section .form-inner .form-group textarea:focus{
+  
+}
+
+.job-form-section .form-inner .form-group textarea{
+  height: 150px;
+  border-radius: 20px;
+  resize: none;
+  padding-top: 15px;
+}
+
+.job-form-section .form-inner .right-content{
+  position: relative;
+  padding-top: 134px;
+  padding-left: 30px;
+}
+
+.job-form-section .form-inner .right-content:before{
+  position: absolute;
+  content: '';
+  background: #e5e5e5;
+  width: 1px;
+  height: calc(100% + 80px);
+  left: 0px;
+  top: -40px;
+}
+
+.job-form-section .form-inner .theme-btn{
+  width: 100%;
+}
+
+
+/** job-section **/
+
+.job-section{
+  position: relative;
+}
+
+.job-block-one{
+  position: relative;
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.06);
+  margin-bottom: 30px;
+}
+
+.job-block-one .upper-box{
+  position: relative;
+  display: block;
+  padding: 16px 40px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.job-block-one .upper-box .job-info{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.job-block-one .upper-box .job-info li{
+  position: relative;
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.job-block-one .upper-box .job-info li:last-child{
+  margin: 0px !important;
+}
+
+.job-block-one .upper-box .job-info li span{
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.job-block-one .upper-box .job-info li i{
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 8px;
+  color: var(--title-color);
+  top: 2px;
+}
+
+.job-block-one .inner-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 40px;
+}
+
+.job-block-one .inner-box .title-box{
+  position: relative;
+  display: block;
+  padding: 19px 0px 19px 140px;
+}
+
+.job-block-one .inner-box .title-box .icon-box{
+  position: absolute;
+  display: inline-block;
+  left: 0px;
+  top: 0px;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  font-size: 50px;
+}
+
+.job-block-one .inner-box .title-box h3{
+  position: relative;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 6px;
+}
+
+.job-block-one .inner-box span{
+  position: relative;
+  display: block;
+}
+
+.job-block-one .inner-box h5{
+  position: relative;
+  display: block;
+  font-size: 18px;
+  line-height: 30px;
+  font-family: var(--text-font);
+  font-weight: 500;
+  color: var(--title-color);
+  margin-bottom: 6px;
+}
+
+.job-block-one .inner-box .theme-btn{
+  border: solid;
+  border-width: 1px;
+  background: transparent;
+  padding: 9px 40px;
+}
+
+.job-block-one .inner-box .theme-btn:hover{
+  border-color: var(--secondary-color) !important;
+  background: var(--secondary-color);
+}
+
+
+.job-form-section.dark-section{
+  background: transparent;
+}
+
+.job-form-section.dark-section .sec-title p{
+  color: var(--text-color);
+}
+
+.job-form-section.dark-section .form-inner{
+  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.06);
+}
+
+.job-form-section .form-inner .upload-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.job-form-section .form-inner .upload-box .icon-box{
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 16px;
+  text-align: center;
+}
+
+.job-form-section .form-inner .upload-box input{
+  position: absolute;
+  display: inline-block;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.job-form-section .form-inner .upload-box button{
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.job-form-section.dark-section .form-inner .theme-btn{
+  width: auto;
+  padding: 15px 116px;
+}
+
+
+/** rtl-css **/
+
+.rtl .job-form-section .form-inner .title-box{
+  padding-left: 0px;
+  padding-right: 120px;
+}
+
+.rtl .job-form-section .form-inner .title-box .icon-box{
+  left: inherit;
+  right: 0px;
+}
+
+.rtl .job-form-section .form-inner .right-content{
+  padding-left: 0px;
+  padding-right: 30px;
+}
+
+.rtl .job-form-section .form-inner .right-content:before{
+  left: inherit;
+  right: 0px;
+}
+
+.rtl .job-block-one .inner-box .title-box{
+  padding-left: 0px;
+  padding-right: 140px;
+}
+
+.rtl .job-block-one .inner-box .title-box .icon-box{
+  left: inherit;
+  right: 0px;
+}
+
+.rtl .job-block-one .upper-box .job-info li{
+  margin-right: 0px;
+  margin-left: 40px;
+}
+
+.rtl .job-block-one .upper-box .job-info li i{
+  margin-right: 0px;
+  margin-left: 8px;
+}
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .job-form-section .form-inner .right-content{
+    padding: 0px !important;
+  }
+
+  .job-form-section .form-inner .right-content:before{
+    display: none;
+  }
+
+  .job-block-one .inner-box{
+    display: block;
+    padding-bottom: 6px;
+  }
+
+  .job-block-one .inner-box .title-box,
+  .job-block-one .inner-box .salary-box,
+  .job-block-one .inner-box .experience-box,
+  .job-block-one .inner-box .btn-box{
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .rtl .job-block-one .inner-box .title-box,
+  .rtl .job-block-one .inner-box .salary-box,
+  .rtl .job-block-one .inner-box .experience-box,
+  .rtl .job-block-one .inner-box .btn-box{
+    margin-right: 0px;
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .job-form-section{
+    padding: 70px 0px 40px 0px;
+  }
+
+  .job-block-one .upper-box,
+  .job-block-one .inner-box{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .job-section{
+    padding: 60px 0px 40px 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+  .job-form-section.dark-section .form-inner .theme-btn{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 499px){
+  .job-block-one .inner-box .title-box{
+    padding-left: 0px;
+  }
+
+  .rtl .job-block-one .inner-box .title-box{
+    padding-right: 0px;
+  }
+
+  .job-block-one .inner-box .title-box .icon-box{
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .job-form-section .form-inner .title-box{
+    padding-left: 0px;
+  }
+
+  .rtl .job-form-section .form-inner .title-box{
+    padding-right: 0px;
+  }
+
+  .job-form-section .form-inner .title-box .icon-box{
+    position: relative;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

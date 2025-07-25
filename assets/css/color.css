@@ -1,0 +1,223 @@
+
+
+
+/*********************************** color ******************************************/
+
+.video_block_one .video-inner .video-content a,
+.news-block-one .inner-box .content-box h4 a:hover,
+.main-footer .social-links li a:hover,
+.industries-block-two .inner-box .icon-box,
+.training-block-one .inner-box .text-box .link a,
+.subscribe-style-two .inner-container h2 span,
+.industries-block-three .inner-box .icon-box,
+.industries-block-three .inner-box h3 a:hover,
+.main-footer.light-footer .social-links li a:hover,
+.banner-carousel .content-box h2 span,
+.header-style-five .header-top p span,
+.header-style-five .header-top .social-links li a:hover,
+.banner-style-five .content-box h2 span,
+.job-form-section .form-inner .title-box .icon-box,
+.job-block-one .inner-box .title-box .icon-box,
+.job-details-content .share-box li a:hover,
+.portfolio-block-one .inner-box .content-box .link a,
+.sign-section .form-inner .other-option .forgot-password:hover,
+.sign-section .form-inner .lower-text p a,
+.blog-sidebar .search-widget .search-form .form-group input:focus + button,
+.blog-sidebar .search-widget .search-form .form-group button:hover,
+.blog-sidebar .category-widget .category-list li a:hover,
+.blog-sidebar .post-widget .post h6 a:hover,
+.blog-sidebar .archives-widget .archives-list li a:hover,
+.sidebar-page-container .download-widget h4 span,
+.contact-section .info-box .single-item p a:hover
+
+{
+  color: var(--theme-color);
+}
+
+
+/** background **/
+
+
+.theme-btn.btn-one,
+.banner-btn.theme-btn:hover,
+.banner-btn.theme-btn:before,
+.banner-btn.theme-btn:after,
+.slide-text .text-inner,
+.slide-text .text-inner:before,
+.chooseus-block-one .inner-box .icon-box,
+.processing-block-one .inner-box .count-text,
+.process-section .tab-btns li:before,
+.pricing-section .tab-btns:before,
+.pricing-block-one .pricing-table .table-footer a:hover,
+.welcome-section .tab-btns li.active-btn,
+.image_block_one .image-box .single-item .experience-box h3,
+.image_block_one .image-box .single-item .support-box .icon-box,
+.image_block_two .image-inner .support-box .icon-box,
+.processing-block-two .inner-box h4,
+.nav-style-one .owl-nav button:before,
+.service-sidebar .category-widget .category-list li a.current,
+.service-sidebar .category-widget .category-list li a:hover,
+.sortable-masonry .filter-tabs li:hover,
+.sortable-masonry .filter-tabs li.active,
+.pagination li a:hover,
+.pagination li a.current,
+.check-box input:checked + label:before,
+.contact-section .info-box .single-item .icon-box
+
+{
+  background: var(--theme-color);
+}
+
+
+
+
+/** border-color **/
+
+.subscribe-section .content-box .form-inner .form-group input:focus,
+.pricing-block-one .pricing-table .table-footer a:hover,
+.service-sidebar .category-widget .category-list li a.current,
+.service-sidebar .category-widget .category-list li a:hover,
+.job-block-one .inner-box .theme-btn,
+.pagination li a:hover,
+.pagination li a.current,
+.sign-section .form-inner .form-group input:focus,
+.sign-section .form-inner .social-links li a:hover,
+.check-box input:checked + label:before,
+.blog-sidebar .search-widget .search-form .form-group input:focus
+
+{
+  border-color: var(--theme-color) !important;
+}
+
+
+
+/*********************************** color-2 ******************************************/
+
+.main-menu .navigation > li.current > a,
+.main-menu .navigation > li:hover > a,
+.main-menu .navigation > li > ul > li > a:hover,
+.main-menu .navigation > li > .megamenu li > a:hover,
+.main-menu .navigation > li > ul > li > ul > li > a:hover,
+.scroll-to-top .scroll-bar-text,
+.main-header .menu-right-content .search-btn button:hover,
+.main-header .menu-right-content .link-box a:hover,
+.sec-title h2 span,
+.sec-title .sub-title,
+.list-style-one li:before,
+.chooseus-block-one .inner-box h3 a:hover,
+.chooseus-block-one .inner-box .link a:hover,
+.team-block-one .inner-box .lower-content h3 a:hover,
+.main-footer .links-widget .links-list li a:hover,
+.footer-bottom .bottom-inner .copyright p a,
+.header-top .info li a:hover,
+.header-top .social-links li a:hover,
+.banner-style-two .content-box h2 span,
+.video_block_two .video-content a,
+.industries-block-two .inner-box:hover .icon-box,
+.content_block_two .content-box .inner-box .single-item h3 a:hover,
+.content_block_three .content-box .accordion-box .accordion .acc-btn.active .icon-box,
+.content_block_three .content-box .accordion-box .accordion .acc-btn.active h4,
+.training-block-one .inner-box .text-box h3 a:hover,
+.pricing-block-one .pricing-table h3,
+.download-section .content-box h2 span,
+.news-block-two .inner-box .lower-content h3 a:hover,
+.news-block-two .inner-box .lower-content .post-info li a:hover,
+.banner-style-three .content-box h2 span,
+.welcome-section .content-box h2 span,
+.welcome-section .content-box .inner-box .single-item h3 a:hover,
+.image_block_one .image-box .single-item .support-box h4 a:hover,
+.dueal-section.alternat-2 .content_block_two .content-box .inner-box .single-item h3 a:hover,
+.content_block_four .content-box .download-btn a:hover,
+.main-footer.light-footer .links-widget .links-list li a:hover,
+.image_block_two .image-inner .support-box h4 a:hover,
+.content_block_five .content-box .inner-box .single-item h4 a:hover,
+.service-block-one .inner-box .lower-content h3 a:hover,
+.testimonial-block-three .inner-box .icon-box,
+.testimonial-style-three .testimonial-block .content-box .icon-box,
+.news-block-three .inner-box .lower-content h3 a:hover,
+.news-block-three .inner-box .lower-content .post-info li i,
+.news-block-three .inner-box .lower-content .post-info li a:hover,
+.page-title .bread-crumb li a:hover,
+.service-sidebar .download-widget h4 span,
+.job-sidebar .info-widget ul li p a:hover,
+.portfolio-block-one .inner-box .content-box h3 a:hover,
+.blog-details-content blockquote .icon-box,
+.blog-details-content .post-share-option .social-links li a:hover,
+.blog-details-content .comment-box .form-inner .form-group label span
+
+{
+  color: var(--theme-color-2);
+}
+
+
+/** background **/
+
+button.rtl,
+button.ltr,
+.sec-title .sub-title:before,
+.list-style-one li:after,
+.header-style-one .main-menu .navigation > li > a:after,
+.content_block_two .content-box .inner-box .single-item:hover .count-text,
+.content_block_two .content-box .inner-box .single-item:after,
+.news-block-two .inner-box .lower-content .category,
+.welcome-section .content-box .inner-box .single-item:hover .icon-box,
+.testimonial-style-two .owl-dots button,
+.header-style-four .main-menu .navigation > li > a:after,
+.banner-carousel .content-box .upper-text,
+.content_block_five .content-box .inner-box .single-item .icon-box,
+.dots-style-one .owl-dots button.active,
+.dots-style-one .owl-dots button:hover,
+.welcome-section.alternat-2 .content-box .inner-box .single-item .icon-box,
+.news-block-three .inner-box .lower-content .category,
+.blog-sidebar .tags-widget .tags-list li a:hover,
+.blog-details-content .post-share-option .tags-list li a:hover
+
+{
+  background: var(--theme-color-2);
+}
+
+
+
+
+/** border-color **/
+
+.main-menu .navigation > li > ul,
+.main-menu .navigation > li > .megamenu,
+.main-menu .navigation > li > ul > li > ul,
+.sec-title .sub-title:after,
+.funfact-block-one .inner-box:hover,
+.welcome-section .content-box .inner-box .single-item:hover,
+.job-form-section .form-inner .form-group input:focus,
+.job-form-section .form-inner .form-group textarea:focus,
+.blog-sidebar .tags-widget .tags-list li a:hover,
+.blog-details-content .post-share-option .tags-list li a:hover,
+.blog-details-content .comment-box .form-inner .form-group input:focus,
+.blog-details-content .comment-box .form-inner .form-group textarea:focus,
+.contact-section .form-inner .form-group input:focus,
+.contact-section .form-inner .form-group textarea:focus
+
+{
+  border-color: var(--theme-color-2) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

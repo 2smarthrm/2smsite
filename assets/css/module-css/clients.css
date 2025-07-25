@@ -1,0 +1,223 @@
+
+/** clients-section **/
+
+.clients-section{
+  position: relative;
+}
+
+.clients-section .inner-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.10);
+  margin-top: -106px;
+}
+
+.clients-section .clients-box{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.clients-section .clients-box .overlay-logo{
+  position: absolute;
+  left: 0px;
+  top: -100%;
+  transition: all 500ms ease;
+}
+
+.clients-section .clients-box:hover .overlay-logo{
+  top: 0px;
+}
+
+
+/** clients-style-two **/
+
+.clients-style-two{
+  position: relative;
+}
+
+.clients-style-two .title-text{
+  position: relative;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.clients-style-two .title-text h3{
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 500;
+}
+
+.clients-style-two .clients-logo{
+  position: relative;
+  display: block; 
+  border-radius: 10px; 
+  transition: all 500ms ease;
+  height:100px;
+  padding:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.clients-style-two .clients-logo img{
+   width:80% !important;
+   height:80px !important;
+   max-height:80px !important;
+   min-height:80px !important;
+   object-fit: contain !important; 
+}
+
+
+.clients-style-two .clients-logo a{
+  position: relative;
+  display: block;
+}
+
+.clients-style-two .clients-logo:hover{
+  opacity: 1;
+}
+
+.clients-section.home-3 .inner-container{
+  margin-top: 0px;
+}
+
+.clients-section .bg-color{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50%;
+  background: var(--secondary-color);
+}
+
+.clients-section .inner-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clients-section .title-text h3{
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 500;
+}
+
+
+/** rtl-css **/
+
+
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .clients-section .inner-container{
+    display: block;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .clients-section .clients-box{
+    margin-bottom: 30px;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .clients-section .clients-box a{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .clients-section .clients-box{
+    margin-bottom: 30px;
+    margin-right: 30px;
+  }
+
+  .clients-section .clients-box:last-child{
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .clients-style-two{
+    padding: 60px 0px 70px 0px;
+  }
+
+  .clients-section.pt_110{
+    padding: 60px 0px 0px 0px;
+  }
+
+  .clients-section .inner-box{
+    display: block;
+  }
+
+  .clients-section.pb_120{
+    padding-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+  
+}
+
+@media only screen and (max-width: 499px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

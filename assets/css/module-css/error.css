@@ -1,0 +1,117 @@
+
+/** error-section **/
+
+.error-section{
+  position: relative;
+}
+
+.error-section .pattern-layer{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.error-section .content-box{
+  position: relative;
+  display: block;
+}
+
+.error-section .content-box h1{
+  display: block;
+  font-size: 200px;
+  line-height: 150px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 13px;
+}
+
+.error-section .content-box h3{
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-bottom: 56px;
+}
+
+.error-section .content-box p{
+  margin-bottom: 42px;
+}
+
+
+/** rtl-css **/
+
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+
+}
+
+@media only screen and (max-width: 767px){
+  .error-section{
+    padding: 70px 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+  
+}
+
+@media only screen and (max-width: 499px){
+  .error-section .content-box h1{
+    font-size: 150px;
+    line-height: 120px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

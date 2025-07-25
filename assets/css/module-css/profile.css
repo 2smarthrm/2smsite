@@ -1,0 +1,385 @@
+
+/** profile-section **/
+
+.profile-section{
+  background: #E6F0F2;
+}
+
+.profile-section .bx-controls-direction{
+  display: none !important;
+}
+
+.profile-section .chat-content{
+  position: relative;
+  padding: 57px 65px 150px 50px;
+  z-index: 1;
+}
+
+.profile-section .chat-content .shape .shape-1{
+  position: absolute;
+  top: 92px;
+  right: 75px;
+  width: 123px;
+  height: 123px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-animation: zoom-fade 4s infinite linear;
+  animation: zoom-fade 4s infinite linear;
+}
+
+.profile-section .chat-content .shape .shape-2{
+  position: absolute;
+  top: 67px;
+  right: 50px;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.profile-section .chat-content:before{
+  position: absolute;
+  content: '';
+  background: var(--secondary-color);
+  width: calc(100% + 65px);
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  clip-path: polygon(0% 0%, 100% 0%, 83% 100%, 0% 100%, 0% 0%);
+}
+
+.profile-section .title-text h3{
+  position: relative;
+  display: inline-block;
+  font-size: 28px;
+  line-height: 38px;
+  padding-left: 42px;
+}
+
+.profile-section .title-text h3 img{
+  position: absolute;
+  left: 0px;
+  top: 3px;
+}
+
+.profile-section .chat-content .title-text h3{
+  color: #fff;
+}
+
+.profile-section .chat-content .single-item{
+  position: relative;
+  display: block;
+  background: #fff;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 29px 15px 29px 96px;
+  margin-bottom: 30px;
+}
+
+.profile-section .chat-content .single-item .image-box{
+  position: absolute;
+  left: 20px;
+  top: 25px;
+}
+
+.profile-section .chat-content .single-item p{
+  color: var(--title-color);
+  font-style: italic;
+}
+
+.profile-section .bx-viewport{
+  min-height: 390px !important;
+}
+
+.profile-section .chat-content .single-item:nth-child(odd){
+  left: 115px;
+}
+
+.profile-section .bx-pager{
+  position: absolute;
+  right: 110px;
+  bottom: 75px;
+  width: 74px;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.20);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-section .bx-pager .bx-pager-item{
+  position: relative;
+  display: flex;
+}
+
+.profile-section .bx-pager .bx-pager-item a{
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 0px;
+  margin: 0px 4px;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.profile-section .verified-content{
+  position: relative;
+  display: block;
+  padding: 57px 60px 60px 60px;
+  z-index: 1;
+}
+
+.profile-section .verified-content .shape .shape-1{
+  position: absolute;
+  top: 92px;
+  right: 75px;
+  width: 123px;
+  height: 123px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  -webkit-animation: zoom-fade 4s infinite linear;
+  animation: zoom-fade 4s infinite linear;
+}
+
+.profile-section .verified-content .shape .shape-2{
+  position: absolute;
+  top: 67px;
+  right: 50px;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.profile-section .verified-content:before{
+  position: absolute;
+  content: '';
+  background: #fff;
+  width: calc(100% + 65px);
+  height: 100%;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 17% 0%);
+}
+
+.profile-section .verified-content .image-box{
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  padding: 42px 36px 10px 36px;
+  border-radius: 10px 10px 0px 0px;
+  margin: 0 auto;
+}
+
+.profile-section .verified-content .image-box .bg-layer{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.profile-section .verified-content .image-box .image{
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+.profile-section .verified-content .image-box .image img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.profile-section .verified-content .image-box .designation{
+  position: absolute;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: var(--title-font);
+  font-weight: 500;
+  color: var(--title-color);
+  text-transform: capitalize;
+  border-radius: 30px;
+  padding: 0px 15px;
+}
+
+.profile-section .verified-content .image-box .designation-1{
+  background: #FFDD66;
+  left: -45px;
+  top: 85px;
+  transform: rotate(8deg);
+}
+
+.profile-section .verified-content .image-box .designation-2{
+  background: #C99FFF;
+  left: -40px;
+  bottom: 75px;
+}
+
+.profile-section .verified-content .image-box .designation-3{
+  background: #3EE4EF;
+  top: 13px;
+  right: -30px;
+  transform: rotate(-10deg);
+}
+
+.profile-section .verified-content .image-box .designation-4{
+  background: #FF9A61;
+  right: -53px;
+  bottom: 125px;
+}
+
+.profile-section .verified-content .lower-content{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 200px;
+  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.06);
+  padding: 23px 60px 19px 60px;
+}
+
+.profile-section .verified-content .lower-content .single-item{
+  position: relative;
+  display: block;
+}
+
+.profile-section .verified-content .lower-content .single-item h4{
+  display: block;
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 2px;
+}
+
+.profile-section .verified-content .lower-content .single-item h4 img{
+  position: relative;
+  display: inline-block;
+  top: -2px;
+}
+
+.profile-section .verified-content .lower-content .single-item p{
+  line-height: 28px;
+}
+
+
+/** rtl-css **/
+
+.rtl .profile-section{
+  direction: ltr;
+}
+
+.rtl .profile-section .chat-content .single-item{
+  text-align: right;
+}
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .profile-section .chat-content:before,
+  .profile-section .verified-content:before{
+    clip-path: inherit !important;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px){
+
+}
+
+@media only screen and (max-width: 599px){
+
+  .profile-section .chat-content{
+    padding: 50px 30px;
+  }
+
+  .profile-section .chat-content .single-item{
+    width: 100% !important;
+    left: 0px !important;
+  }
+
+  .profile-section .bx-pager{
+    display: none;
+  }
+
+  .profile-section .verified-content{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .profile-section .verified-content .image-box .designation{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 499px){
+  .profile-section .verified-content .lower-content{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .profile-section .verified-content .lower-content{
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

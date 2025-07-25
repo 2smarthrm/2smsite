@@ -1,0 +1,266 @@
+
+/** portfolio-section **/
+
+.portfolio-section{
+  position: relative;
+}
+
+.portfolio-block-one .inner-box{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.portfolio-block-one .inner-box .image-box{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.portfolio-block-one .inner-box .image-box img{
+  width: 100%;
+  border-radius: 10px;
+  transition: all 500ms ease;
+}
+
+.portfolio-block-one .inner-box:hover .image-box img{
+  transform: scale(1.05);
+}
+
+.portfolio-block-one .inner-box .content-box{
+  position: absolute;
+  left: 20px;
+  bottom: 0px;
+  width: calc(100% - 40px);
+  border-radius: 10px;
+  padding: 23px 15px;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+.portfolio-block-one .inner-box:hover .content-box{
+  bottom: 20px;
+  opacity: 1;
+}
+
+.portfolio-block-one .inner-box .content-box:before{
+  position: absolute;
+  content: '';
+  background: rgba(17, 17, 17, 0.8);
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.portfolio-block-one .inner-box .content-box span{
+  position: relative;
+  display: block;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.portfolio-block-one .inner-box .content-box h3{
+  position: relative;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.portfolio-block-one .inner-box .content-box h3 a{
+  display: inline-block;
+  color: #fff;
+}
+
+.portfolio-block-one .inner-box .content-box h3 a:hover{
+
+}
+
+.portfolio-block-one .inner-box .content-box .link a{
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: var(--title-font);
+  font-weight: 500;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-top: 16px;
+}
+
+.portfolio-block-one .inner-box .content-box .link a:hover{
+  color: #fff;
+}
+
+.sortable-masonry .filters{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sortable-masonry .filter-tabs{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e5e5;
+  border-radius: 100px;
+  padding: 7px;
+}
+
+.sortable-masonry .filter-tabs li{
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: var(--title-font);
+  font-weight: 500;
+  color: var(--text-color);
+  text-transform: capitalize;
+  padding: 10px 50px;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: all 500ms ease;
+}
+
+.sortable-masonry .filter-tabs li:hover,
+.sortable-masonry .filter-tabs li.active{
+  color: var(--title-color);
+}
+
+.portfolio-section.portfolio-two .portfolio-block-one .inner-box .content-box{
+  width: 100%;
+  left: 0px;
+  bottom: -20px;
+}
+
+.portfolio-section.portfolio-two .portfolio-block-one .inner-box:hover .content-box{
+  bottom: 0px;
+}
+
+.portfolio-section.portfolio-two .portfolio-block-one .inner-box .content-box:before{
+  filter: blur(0px);
+  opacity: 0.5;
+}
+
+.portfolio-masonry .portfolio-block-one .inner-box .content-box:before{
+  display: none;
+}
+
+.portfolio-masonry .portfolio-block-one .inner-box .image-box{
+  background: #111;
+}
+
+.portfolio-masonry .portfolio-block-one .inner-box:hover .image-box img{
+  opacity: 0.4;
+}
+
+.portfolio-masonry .portfolio-block-one .inner-box .content-box{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%) translateY(30px);
+  width: 100%;
+  overflow: visible;
+  padding: 0px 15px;
+  bottom: inherit;
+}
+
+.portfolio-masonry .portfolio-block-one .inner-box:hover .content-box{
+  transform: translate(-50%,-50%) translateY(0px);
+}
+
+
+/** rtl-css **/
+
+
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+  .sortable-masonry .filter-tabs li{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 991px){
+  .sortable-masonry .filter-tabs{
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 767px){
+
+}
+
+@media only screen and (max-width: 599px){
+  
+}
+
+@media only screen and (max-width: 499px){
+  .sortable-masonry .filter-tabs{
+    border-radius: 10px;
+  }
+
+  .sortable-masonry .filter-tabs li{
+    border-radius: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

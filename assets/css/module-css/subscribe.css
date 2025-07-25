@@ -1,0 +1,281 @@
+
+/** subscribe-section **/
+
+.subscribe-section{
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-section .bg-layer:before{
+  position: absolute;
+  content: '';
+  background: #000;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  opacity: 0.5;
+}
+
+.subscribe-section .content-box{
+  position: relative;
+  display: block;
+  max-width: 770px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.subscribe-section .content-box h2{
+  font-size: 48px;
+  line-height: 58px;
+  color: #fff;
+  margin-bottom: 35px;
+}
+
+.subscribe-section .content-box .form-inner .form-group{
+  position: relative;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.subscribe-section .content-box .form-inner .form-group input[type='email']{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 55px;
+  padding: 10px 170px 10px 56px;
+  font-size: 16px;
+  color: #8A8A8A;
+  transition: all 500ms ease;
+}
+
+.subscribe-section .content-box .form-inner .form-group input:focus{
+
+}
+
+.subscribe-section .content-box .form-inner .form-group .icon-box{
+  position: absolute;
+  left: 30px;
+  top: 26px;
+  font-size: 16px;
+  color: #AAAAAA;
+  z-index: 1;
+}
+
+.subscribe-section .content-box .form-inner .form-group button[type='submit']{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.subscribe-section .content-box p{
+  line-height: 30px;
+  color: #fff;
+}
+
+
+/** subscribe-style-two **/
+
+.subscribe-style-two{
+  position: relative;
+}
+
+.subscribe-style-two .bg-color{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50%;
+  background: #E6F0F2;
+}
+
+.subscribe-style-two .inner-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 40px 80px;
+}
+
+.subscribe-style-two .inner-container h2{
+  font-size: 36px;
+  line-height: 44px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.subscribe-style-two .inner-container h2 span{
+
+}
+
+.subscribe-style-two .inner-container .form-inner{
+  position: relative;
+  width: 440px;
+}
+
+.subscribe-style-two .inner-container .form-inner .form-group{
+  position: relative;
+  display: block;
+  margin-bottom: 0px;
+}
+
+.subscribe-style-two .inner-container .form-inner .form-group input[type='email']{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  border-radius: 50px;
+  padding: 10px 150px 10px 30px;
+}
+
+.subscribe-style-two .inner-container .form-inner .form-group button[type='submit']{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 10px 30px;
+}
+
+.subscribe-style-two .inner-container .shape-box .shape-1{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 140px;
+  background-repeat: no-repeat;
+}
+
+.subscribe-style-two .inner-container .shape-box .shape-2{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 159px;
+  height: 140px;
+  background-repeat: no-repeat;
+}
+
+.subscribe-style-two .inner-container .shape-box{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.subscribe-style-two .bg-color-2{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50%;
+  background: #1A1A1A;
+}
+
+
+/** rtl-css **/
+
+.rtl .subscribe-section .content-box .form-inner .form-group button[type='submit']{
+  right: inherit;
+  left: 5px;
+}
+
+.rtl .subscribe-section .content-box .form-inner .form-group input[type='email']{
+  padding-right: 56px;
+  padding-left: 170px;
+}
+
+.rtl .subscribe-section .content-box .form-inner .form-group .icon-box{
+  left: inherit;
+  right: 30px;
+}
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .subscribe-style-two .inner-container{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .subscribe-section{
+    padding: 70px 0px;
+  }
+
+  .subscribe-style-two .inner-container{
+    display: block;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .subscribe-style-two .inner-container h2{
+    margin-bottom: 30px;
+  }
+
+  .subscribe-style-two .inner-container .form-inner{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 599px){
+  
+}
+
+@media only screen and (max-width: 499px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
