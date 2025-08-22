@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
-
     <!-- Stylesheets -->
     <link href="assets/css/font-awesome-all.css" rel="stylesheet">
     <link href="assets/css/flaticon.css" rel="stylesheet">
@@ -44,15 +43,24 @@
     <link href="assets/css/module-css/apps.css" rel="stylesheet">
     <link href="assets/css/module-css/footer.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7N03GKXRCP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7N03GKXRCP');
+    </script>
+
 </head>
 
 <body>
-    <div class="boxed_wrapper ltr">
-
+<div id="barba-wrapper">
+    <div class="barba-container">
+            <div class="boxed_wrapper ltr">
         <!-- main header -->
         <header class="main-header header-style-three">
             <!-- header-lower -->
@@ -61,7 +69,8 @@
                     <div class="outer-box">
                         <figure class="logo-box">
                             <a href="index.html">
-                                <img src="https://ik.imagekit.io/fsobpyaa5i/logo-2smart-17%20(1).png"
+                                <img class="blurhash-auto"
+                                    src="https://ik.imagekit.io/fsobpyaa5i/logo-2smart-17%20(1).png"
                                     alt="logo-2smart-24-1">
                             </a>
                         </figure>
@@ -75,100 +84,312 @@
                             <nav class="main-menu navbar-expand-md navbar-light clearfix">
                                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix">
-                                        <li><a href="#" class="text-active">Inicio</a></li>
-                                        <li>
-                                            <a href="#">Soluções <i class="fa-solid fa-caret-down"></i><i
-                                                    class="fa-solid fa-caret-up"></i> </a>
+                                        <li><a href="index.html" id="t1" translate="no"  class="text-active">Inicio</a></li>
+                                        <li class="mg-menu">
+                                            <a href="#" class="toggle-services-menu">Soluções
+                                                <i class="fa-solid fa-caret-down"></i>
+                                                <i class="fa-solid fa-caret-up"></i>
+                                            </a>
                                             <ol class="mega-menu">
-                                                <menu>
-                                                    <article>
-                                                        <div class="icon">
-                                                            <i class="fa-solid fa-user-plus"></i>
-                                                        </div>
-                                                        <div class="text-block">
-                                                            <a href="#"><a href="#">
-                                                                    <h5>Gestão de Colaboradores</h5>
-                                                                </a></a>
-                                                            <p>Centralize todas as informações dos seus colaboradores,
-                                                                desde dados pessoais até contratos e vínculos laborais.
-                                                            </p>
-                                                            <a href="#">Saber mais <i
-                                                                    class="fa-solid fa-arrow-right"></i></a>
-                                                        </div>
-                                                    </article>
-
-                                                    <article>
-                                                        <div class="icon">
-                                                            <i class="fa-solid fa-map-location-dot"></i>
-                                                        </div>
-                                                        <div class="text-block">
-                                                            <a href="#">
-                                                                <h5>Geofencing e Presença</h5>
-                                                            </a>
-                                                            <p>Monitorização inteligente da assiduidade com base em
-                                                                localização. Controle entradas e saídas por zonas
-                                                                geográficas.</p>
-                                                            <a href="#">Saber mais <i
-                                                                    class="fa-solid fa-arrow-right"></i></a>
-                                                        </div>
-                                                    </article>
-
-                                                    <article>
-                                                        <div class="icon">
-                                                            <i class="fa-solid fa-calendar-check"></i>
-                                                        </div>
-                                                        <div class="text-block">
-                                                            <a href="#">
-                                                                <h5>Planificação e Mapas</h5>
-                                                            </a>
-                                                            <p>Crie e visualize o mapa de trabalho, férias, feriados e
-                                                                turnos. Planeamento eficiente e visibilidade para toda a
-                                                                equipa.</p>
-                                                            <a href="#">Saber mais <i
-                                                                    class="fa-solid fa-arrow-right"></i></a>
-                                                        </div>
-                                                    </article>
-
-                                                    <article>
-                                                        <div class="icon">
-                                                            <i class="fa-solid fa-chart-line"></i>
-                                                        </div>
-                                                        <div class="text-block">
-                                                            <a href="#">
-                                                                <h5>Indicadores de Produtividade</h5>
-                                                            </a>
-                                                            <p>Acompanhe o desempenho por período ou diária. Avalie a
-                                                                produtividade individual e da equipa em tempo real.</p>
-                                                            <a href="#">Saber mais <i
-                                                                    class="fa-solid fa-arrow-right"></i></a>
-                                                        </div>
-                                                    </article>
-                                                </menu>
-
                                                 <div class="formation-box">
-                                                    <div class="image">
-                                                        <img src="https://i.ibb.co/4wt5ZMCM/IMG-7905.jpg" alt="">
-                                                    </div>
-                                                    <p>
-                                                        <br>
-                                                        <small>
-                                                            Partilhámos conhecimento, explorámos o 2Smart na prática e
-                                                            aproximámos-nos dos nossos utilizadores.
-                                                        </small>
-                                                    </p>
-                                                    <a class="bg-primary btn text-white text-light">Saiba mais <i
-                                                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                                    <h5 class="active"><span>Gestão de colaboradores </span>
+                                                        <div><i class="fa-solid fa-angle-right"></i></div>
+                                                    </h5>
+                                                    <h5><span>Aplicação 2Smart HR</span>
+                                                        <div><i class="fa-solid fa-angle-right"></i></div>
+                                                    </h5>
+                                                    <h5><span>Exportação ERP</span>
+                                                        <div><i class="fa-solid fa-angle-right"></i></div>
+                                                    </h5>
                                                 </div>
+                                                <div class="menu-options">
+                                                    <menu class="active">
+                                                        <article>
+                                                            <a href="employee_management.html">
+                                                                <div class="icon">
+                                                                    <i class="fa-solid fa-user-plus"></i>
+                                                                </div>
+                                                            </a>
+                                                            <div class="text-block">
+                                                                <a href="employee_management.html">
+                                                                    <h5>Gestão de Colaboradores</h5>
+                                                                </a>
+                                                                <p>Centralize todas as informações dos seus
+                                                                    colaboradores,
+                                                                    desde dados pessoais até contratos e vínculos
+                                                                    laborais.
+                                                                </p>
+                                                                <a href="employee_management.html">Saber mais <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </article>
+
+                                                        <article>
+                                                            <a href="geofencing_and_geolocation.html">
+                                                                <div class="icon">
+                                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                                </div>
+                                                            </a>
+                                                            <div class="text-block">
+                                                                <a href="geofencing_and_geolocation.html">
+                                                                    <h5>Geofencing e Geolocalização</h5>
+                                                                </a>
+                                                                <p>Monitorização inteligente da assiduidade com base em
+                                                                    localização. Controle entradas e saídas por zonas
+                                                                    geográficas.</p>
+                                                                <a href="geofencing_and_geolocation.html">Saber mais <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </article>
+
+                                                        <article>
+                                                            <a href="planning_and_Workflow.html">
+                                                                <div class="icon">
+                                                                    <i class="fa-solid fa-calendar-check"></i>
+                                                                </div>
+                                                            </a>
+                                                            <div class="text-block">
+                                                                <a href="planning_and_Workflow.html">
+                                                                    <h5>Planificação e Workflow</h5>
+                                                                </a>
+                                                                <p>Estruture departamentos, organize equipas e atribua
+                                                                    chefias com clareza para um planeamento mais eficaz.
+                                                                </p>
+                                                                <a href="planning_and_Workflow.html">Saber mais <i
+                                                                        class="fa-solid fa-arrow-right"></i>
+                                                                </a>
+                                                            </div>
+                                                        </article>
+                                                        <article>
+                                                            <a href="reports_and_Analysis.html">
+                                                                <div class="icon">
+                                                                    <i class="fa-solid fa-file-invoice"></i>
+                                                                </div>
+                                                            </a>
+                                                            <div class="text-block">
+                                                                <a href="reports_and_Analysis.html">
+                                                                    <h5>Relatórios e Análises</h5>
+                                                                </a>
+                                                                <p>Gere relatórios personalizados sobre presenças,
+                                                                    turnos , produtividade, etc. Tome decisões com dados
+                                                                    atualizados.</p>
+                                                                <a href="reports_and_Analysis.html">Saber mais <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </article>
+
+                                                        <div class="menu-mobile">
+                                                            <article class="col">
+                                                                <a href="application.html">
+                                                                    <div class="icon">
+                                                                        <i class="fa-solid fa-people-group"></i>
+                                                                    </div>
+                                                                </a>
+                                                                <div class="text-block">
+                                                                    <a href="application.html">
+                                                                        <h5>Aplicação 2Smart para colaboradores</h5>
+                                                                    </a>
+                                                                    <p>
+                                                                        Centralize todas as informações dos seus
+                                                                        colaboradores em um só lugar —
+                                                                        desde dados pessoais até contratos e históricos
+                                                                        de
+                                                                        assiduidades.
+                                                                        Com o 2Smart, a gestão da sua equipe fica mais
+                                                                        rápida, prática e organizada do que nunca.
+                                                                    </p>
+                                                                    <a href="application.html">Saber mais <i
+                                                                            class="fa-solid fa-arrow-right"></i></a>
+                                                                </div>
+                                                            </article>
+                                                            <article class="col">
+                                                                <a href="ERP-solution.html">
+                                                                    <div class="icon">
+                                                                        <i class="fa-solid fa-file-export"></i>
+                                                                    </div>
+                                                                </a>
+                                                                <div class="text-block">
+                                                                    <a href="ERP-solution.html">
+                                                                        <h5>Exportação ERP integrada na 2Smart</h5>
+                                                                    </a>
+                                                                    <p>
+                                                                        Simplifique a comunicação entre a gestão de
+                                                                        recursos
+                                                                        humanos e os seus sistemas de contabilidade ou
+                                                                        ERP.
+                                                                        Com a <strong>exportação direta de relatórios e
+                                                                            mapas</strong>, como registos de tempos de
+                                                                        trabalho,
+                                                                        banco de horas, faltas e férias, a 2Smart
+                                                                        garante
+                                                                        que todos os dados fluem de forma precisa e
+                                                                        automática para o seu software de gestão.
+                                                                    </p>
+                                                                    <a href="ERP-solution.html">Saber mais <i
+                                                                            class="fa-solid fa-arrow-right"></i></a>
+                                                                </div>
+                                                            </article>
+                                                        </div>
+
+
+
+
+
+
+
+                                                    </menu>
+                                                    <menu class="menu-app">
+                                                        <article class="col">
+                                                            <a href="application.html">
+                                                                <div class="icon">
+                                                                    <i class="fa-solid fa-people-group"></i>
+                                                                </div>
+                                                            </a>
+                                                            <div class="text-block">
+                                                                <a href="application.html">
+                                                                    <h5>Aplicação 2Smart para colaboradores</h5>
+                                                                </a>
+                                                                <p>
+                                                                    Centralize todas as informações dos seus
+                                                                    colaboradores em um só lugar —
+                                                                    desde dados pessoais até contratos e históricos de
+                                                                    assiduidades.
+                                                                    Com o 2Smart, a gestão da sua equipe fica mais
+                                                                    rápida, prática e organizada do que nunca.
+                                                                </p>
+                                                                <a href="application.html">Saber mais <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </article>
+                                                        <div class="app-image">
+                                                            <img src="https://ik.imagekit.io/fsobpyaa5i/iPhones-02%20(2)%20(1).png"
+                                                                alt="">
+                                                        </div>
+                                                    </menu>
+                                                    <menu class="menu-app">
+                                                        <article class="col">
+                                                            <a href="ERP-solution.html">
+                                                                <div class="icon">
+                                                                    <i class="fa-solid fa-file-export"></i>
+                                                                </div>
+                                                            </a>
+                                                            <div class="text-block">
+                                                                <a href="ERP-solution.html">
+                                                                    <h5>Exportação ERP integrada na 2Smart</h5>
+                                                                </a>
+                                                                <p>
+                                                                    Simplifique a comunicação entre a gestão de recursos
+                                                                    humanos e os seus sistemas de contabilidade ou ERP.
+                                                                    Com a <strong>exportação direta de relatórios e
+                                                                        mapas</strong>, como registos de tempos de
+                                                                    trabalho,
+                                                                    banco de horas, faltas e férias, a 2Smart garante
+                                                                    que todos os dados fluem de forma precisa e
+                                                                    automática para o seu software de gestão.
+                                                                </p>
+                                                                <a href="ERP-solution.html">Saber mais <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </article>
+                                                        <div class="app-image">
+                                                            <div>
+                                                                <div>
+                                                                    <img src="https://ik.imagekit.io/fsobpyaa5i/Frame%204%20(2)%20(1).png"
+                                                                        alt="Exportação ERP na 2Smart">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </menu>
+                                                    <menu>
+                                                        <h2>4</h2>
+                                                    </menu>
+                                                </div>
+
                                             </ol>
                                         </li>
-                                        <li><a href="blog.html">Blog</a> </li>
+                                        <li><a href="blog.html">Blogue</a> </li>
+                                        <li><a href="prices.html">Preços</a> </li>
                                         <li><a href="about.html">Sobre nós</a> </li>
                                     </ul>
                                 </div>
                             </nav>
                         </div>
                         <div class="menu-right-content">
-                            <div class="link-box mr_20"><a href="contact.html"
+
+
+
+
+                            <aside>
+                                <div class="dropdown">
+                                    <button
+                                        class="btn btn-outlined text-light dropdown-toggle d-flex align-items-center"
+                                        type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-globe"></i>
+                                        <span class="lang-code current-lang">PT</span>
+                                    </button>
+                                    <ul class="dropdown-menu lang-switcher">
+                                        <li>
+                                            <a class="dropdown-item" href="#" data-lang="fr" data-code="FR">
+                                                <svg viewBox="0 0 3 2">
+                                                    <rect width="1" height="2" fill="#0055A4" />
+                                                    <rect width="1" height="2" x="1" fill="#fff" />
+                                                    <rect width="1" height="2" x="2" fill="#EF4135" />
+                                                </svg>
+                                                Francês
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#" data-lang="es" data-code="ES">
+                                                <svg viewBox="0 0 3 2">
+                                                    <rect width="3" height="2" fill="#AA151B" />
+                                                    <rect width="3" height="1" y=".5" fill="#F1BF00" />
+                                                </svg>
+                                                Espanhol
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#" data-lang="en" data-code="EN">
+                                                <svg viewBox="0 0 60 30">
+                                                    <clipPath id="s">
+                                                        <path d="M0,0 v30 h60 v-30 z" />
+                                                    </clipPath>
+                                                    <clipPath id="t">
+                                                        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                                                    </clipPath>
+                                                    <g clip-path="url(#s)">
+                                                        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                                                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff"
+                                                            stroke-width="6" />
+                                                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E"
+                                                            stroke-width="4" clip-path="url(#t)" />
+                                                        <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                                                        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E"
+                                                            stroke-width="6" />
+                                                    </g>
+                                                </svg>
+                                                Inglês
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#" data-lang="pt" data-code="PT">
+                                                <svg viewBox="0 0 3 2">
+                                                    <rect width="3" height="2" fill="#FF0000" />
+                                                    <rect width="1.2" height="2" fill="#006600" />
+                                                    <circle cx="1.2" cy="1" r="0.3" fill="#FFD700" />
+                                                </svg>
+                                                Português
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+
+
+
+
+
+
+                            <div class="link-box ml_20 mr_20"><a href="contact.html"
                                     class="theme-btn text-white bg-primary">Contatos</a>
                             </div>
                             <div class="btn-box"><a href="request-budget.html"
@@ -183,7 +404,7 @@
                 <div class="outer-container">
                     <div class="outer-box">
                         <figure class="logo-box">
-                            <div class="logo-b"><a href="index.html"><img
+                            <div class="logo-b"><a href="index.html"><img class="blurhash-auto"
                                         src="https://ik.imagekit.io/fsobpyaa5i/Ativo%208%20(2).png" alt=""></a></div>
                         </figure>
                         <div class="menu-area">
@@ -192,15 +413,76 @@
                             </nav>
                         </div>
                         <div class="menu-right-content">
-                            <div class="link-box mr_20"><a href="contact.html">Contatos</a></div>
+                            <div class="dropdown">
+                                <button class="btn btn-outlined text-dark dropdown-toggle d-flex align-items-center"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-globe"></i>
+                                    <span class="lang-code current-lang">PT</span>
+                                </button>
+                                <ul class="dropdown-menu lang-switcher">
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-lang="fr" data-code="FR">
+                                            <svg viewBox="0 0 3 2">
+                                                <rect width="1" height="2" fill="#0055A4" />
+                                                <rect width="1" height="2" x="1" fill="#fff" />
+                                                <rect width="1" height="2" x="2" fill="#EF4135" />
+                                            </svg>
+                                            Francês
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-lang="es" data-code="ES">
+                                            <svg viewBox="0 0 3 2">
+                                                <rect width="3" height="2" fill="#AA151B" />
+                                                <rect width="3" height="1" y=".5" fill="#F1BF00" />
+                                            </svg>
+                                            Espanhol
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-lang="en" data-code="EN">
+                                            <svg viewBox="0 0 60 30">
+                                                <clipPath id="s">
+                                                    <path d="M0,0 v30 h60 v-30 z" />
+                                                </clipPath>
+                                                <clipPath id="t">
+                                                    <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                                                </clipPath>
+                                                <g clip-path="url(#s)">
+                                                    <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                                                    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+                                                    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"
+                                                        clip-path="url(#t)" />
+                                                    <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                                                    <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                                                </g>
+                                            </svg>
+                                            Inglês
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-lang="pt" data-code="PT">
+                                            <svg viewBox="0 0 3 2">
+                                                <rect width="3" height="2" fill="#FF0000" />
+                                                <rect width="1.2" height="2" fill="#006600" />
+                                                <circle cx="1.2" cy="1" r="0.3" fill="#FFD700" />
+                                            </svg>
+                                            Português
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="link-box ml_20 mr_20"><a href="contact.html">Contatos</a></div>
                             <div class="btn-box">
                                 <a href="request-budget.html" class="theme-btn text-white btn-one">Orçamento</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </header>
-        <!-- main-header end -->
+
+
 
 
         <!-- Mobile Menu  -->
@@ -208,72 +490,59 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="#"><img src="https://ik.imagekit.io/fsobpyaa5i/Ativo%208%20(2).png"
-                            alt="" title=""></a>
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img class="blurhash-auto" src="https://ik.imagekit.io/fsobpyaa5i/logo-2smart-17%20(1).png">
+                    </a>
                 </div>
                 <div class="menu-outer">
-                </div>
-                <div class="contact-info">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>Rua Fernando Farinha nº 2A e 2B Braço de Prata 1950-448 Lisboa</li>
-                        <li><a href="tel:+351210353555">(+351) 210 353 555</a></li>
-                        <li><a href="mailto:geral@exportech.com.pt">geral@exportech.com.pt</a></li>
-                    </ul>
-                </div>
-                <div class="social-links">
-                    <ul class="clearfix">
-                        <li><a href="#"><span class="fab fa-linkedin"></span></a></li>
-                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
-                    </ul>
                 </div>
             </nav>
         </div>
         <!-- End Mobile Menu -->
         <Header class="custom-header">
             <div class="image-background">
-                <img src="https://images.pexels.com/photos/5709610/pexels-photo-5709610.jpeg" alt="">
+                <img class="blurhash-auto" src="https://images.pexels.com/photos/5709610/pexels-photo-5709610.jpeg"
+                    alt="">
             </div>
             <div class="over-header">
                 <div class="col">
                     <div class="auto-container">
                         <div class="center ">
                             <div class="txt">
-                                <div class="sec-title pb_20 sec-title-animation animation-style2">
-                                    <div class="mt_2"><span class="sub-title mb_10 text-white title-animation">Your app
-                                            powered by
-                                            AI</span></div>
-                                    <h1 class="title-animation">2Smart Software de <span class="line">gestão de
-                                            assiduiades</span></h1>
+                                <div translate="no" class="sec-title pb_20 sec-title-animation animation-style2">
+                                    <div class="mt_2"><span id="t2" class="sub-title mb_10 text-white title-animation">Your app  powered by AI</span></div>
+                                    <h1 class="title-animation t1" >
+                                        <span id="t3" >2Smart Software de </span><span id="t4" class="line">gestão de  assiduiades</span>
+                                    </h1>
                                 </div>
-                                <h1 class="title-animation">
+                                <h1 translate="no" class="title-animation t1">
                                     <div class="flex ml-2">
                                         <div class="avatars">
-                                            <div class="avatar-item"><img
+                                            <div class="avatar-item"><img class="blurhash-auto"
                                                     src="https://static.vecteezy.com/system/resources/thumbnails/035/340/224/small/close-up-shot-of-smiling-asian-girl-points-finger-at-upper-left-corner-shows-banner-demonstrates-advertisement-blue-background-free-photo.jpg"
                                                     alt=""> </div>
-                                            <div class="avatar-item"><img
+                                            <div class="avatar-item"><img class="blurhash-auto"
                                                     src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
                                                     alt=""> </div>
-                                            <div class="avatar-item"><img
+                                            <div class="avatar-item"><img class="blurhash-auto"
                                                     src="https://www.tu-ilmenau.de/unionline/fileadmin/_processed_/0/0/csm_Person_Yury_Prof_Foto_AnLI_Footgrafie__2_.JPG_94f12fbf25.jpg"
                                                     alt=""></div>
                                             <div class="avatar-item bg-primary">+30K</div>
                                         </div>
-                                        a sua solução de RH
+                                       <span id="t5" > a sua solução de RH</span>
                                     </div>
                                 </h1>
                                 <p>
                                     A Plataforma Cloud com Portal de Colaborador integrada e dotada de IA que o ajuda a
-                                    gerir
-                                    eficientemente os seus RH, Centralize todas as tarefas num só lugar, desde folhas de
-                                    ponto a avaliações de desempenho.
+                                    gerir eficientemente os seus RH.
+                                    Centralize a gestão da força de trabalho num só sistema: registe horas, controle
+                                    assiduidade, organize turnos e acompanhe o desempenho.
                                 </p>
 
                                 <div class="mt_20 d-flex">
-                                    <a href="#" class="theme-btn text-white btn-one">Saiba mais</a>
-                                    <a href="#" class="theme-btn text-dark bg-light ml-1">Contactar</a>
+                                    <a href="about.html" class="theme-btn text-white btn-one">Saiba mais</a>
+                                    <a href="contact.html" class="theme-btn text-dark bg-light ml-1">Contactar</a>
                                 </div>
                             </div>
                             <section class="mock-area-apps">
@@ -282,7 +551,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
 
         </Header>
         <!-- clients-style-two -->
@@ -290,78 +559,78 @@
             <div class="auto-container">
                 <div class="title-text">
                     <div class="sec-title pb_20 sec-title-animation animation-style2">
-                        <h2 class="title-animation">
-                            +650 empresas e +30.800 colaboradores <br> usam o nosso software
+                        <h2 translate="no" class="title-animation">
+                            <span class="text-dark" id="t6" >+650 empresas e +30.800 colaboradores</span> <br> <span id="t7" class="text-dark">usam o nosso software</span>
                         </h2>
                     </div>
                 </div>
                 <div class="clients-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://www.santini.pt/wp-content/themes/s4ntini/images/santini-mainlogo.svg"
                                 alt=""></a>
                     </figure>
-                    <figure class="clients-logo"><a href="#"><img
-                        style="width:80% !important;height:60% !important;object-fit: contain !important;"
-                        src="https://ik.imagekit.io/fsobpyaa5i/100_Montaditos%20(2).png?updatedAt=1753441091368"
-                        alt=""></a>
-                    </figure> 
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
+                                style="width:80% !important;height:60% !important;object-fit: contain !important;"
+                                src="https://ik.imagekit.io/fsobpyaa5i/100_Montaditos%20(2).png?updatedAt=1753441091368"
+                                alt=""></a>
+                    </figure>
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://casarelvas.pt/img/Logo_Intro-01.4b37a539.svg" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://www.leathernaturally.org/wp-content/uploads/2023/03/couroazul.png"
                                 alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://statics.impresa.pt/php-assets/impresa/active/assets/gfx/logo_hq.png"
                                 alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://i0.wp.com/www.zapping-tv.com/wp-content/uploads/2013/02/sic_2.jpg?fit=555%2C404&amp;ssl=1"
                                 alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Expresso_newspaper_logo.svg/744px-Expresso_newspaper_logo.svg.png"
                                 alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://sdistribution.impresa.pt/data/content/binaries/b58/207/7422461b-ba2f-49d1-a5bf-dcddad117f38/sicnot.svg"
                                 alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Intermarch%C3%A9_logo_2009_classic.svg/2560px-Intermarch%C3%A9_logo_2009_classic.svg.png"
                                 alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://cm-condeixa.pt/img/logo.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://desentop.com/wp-content/uploads/2023/09/logo_desentop_RGB_positivo-2.svg"
                                 alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://www.funchal.pt/wp-content/uploads/2023/09/0_WFx_mun.png" alt=""></a>
                     </figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNLwsWtWagT5D4-jYBv3uL0sDbk-PBsKUrXw&amp;s"
                                 alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://financor.pt/wp-content/uploads/2018/01/logo1.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://www.cm-mira.pt/sites/default/files/logo2.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="#"><img
+                    <figure class="clients-logo"><a href="#"><img class="blurhash-auto"
                                 style="width:80% !important;height:60% !important;object-fit: contain !important;"
                                 src="https://www.han.gov.cv/images/logotipo-versao-4.png" alt=""></a></figure>
 
                 </div>
             </div>
         </section>
-        <!-- clients-style-two end -->
+
 
         <!-- about-style-two -->
         <section class="about-style-two">
@@ -371,10 +640,11 @@
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                         <div class="content_block_one">
                             <div class="content-box mr_80">
-                                <div class="sec-title pb_20 sec-title-animation animation-style2">
-                                    <span class="sub-title mb_10 title-animation">Sobre o 2Smart HR</span>
-                                    <h2 class="title-animation">
-                                        Simplifique a sua Gestão de Recursos Humanos com o <span>2Smart</span>
+                                <div translate="no" class="sec-title pb_20 sec-title-animation animation-style2">
+                                    <span class="sub-title mb_10 title-animation" id="t8">Sobre o 2Smart HR</span>
+                                    <h2 class="title-animation t9">
+                                       <span class="text-dark" id="t9"> Simplifique a sua Gestão de Recursos Humanos com o 
+                                       <span>2Smart</span></span>  
                                     </h2>
                                 </div>
                                 <div class="text-box">
@@ -399,16 +669,19 @@
                     </div>
                     <!-- Vídeo/Imagem à direita -->
                     <div class="col-lg-6 col-md-12 col-sm-12 video-column image-column-area">
-                        <img src="https://ik.imagekit.io/fsobpyaa5i/kiosso_image%20(1).png"
+                        <img class="blurhash-auto" src="https://ik.imagekit.io/fsobpyaa5i/kiosso_image%20(1).png"
                             alt="01-Portrait-App-Screen-Mockup">
                     </div>
                 </div>
             </div>
         </section>
+
+
         <!-- about-style-two end -->
         <div class="space-area">
             <br><br><br><br>
         </div>
+
         <!-- MODULOS -->
         <section class="modules-section">
             <div class="auto-container">
@@ -426,8 +699,7 @@
                                         <!-- Primeira caixa sobre feriados e tolerâncias de ponto -->
                                         <div class="box card-blue sm">
                                             <div class="text">
-                                                <h2 class="text-white title-animation">Gestão de Feriados e Tolerâncias
-                                                </h2>
+                                                <h2 translate="no" class="text-white title-animation" id="t10" >Gestão de Feriados e Tolerâncias </h2>
                                                 <p class="text-light">O 2Smart HR permite gerir feriados e tolerâncias
                                                     de ponto de forma simples e eficaz. Registe eventos, automatize
                                                     regras e aceda a relatórios detalhados em poucos cliques, tudo com
@@ -435,7 +707,8 @@
                                             </div>
                                             <div class="image-area-block imgb1">
                                                 <div class="image">
-                                                    <img src="https://ik.imagekit.io/fsobpyaa5i/Group%2026.png" alt="">
+                                                    <img class="blurhash-auto"
+                                                        src="https://ik.imagekit.io/fsobpyaa5i/Group%2026.png" alt="#">
                                                 </div>
                                             </div>
                                         </div>
@@ -444,12 +717,13 @@
                                         <div class="box lg card2">
                                             <div class="image-area ">
                                                 <div class="image  imgdb2">
-                                                    <img src="https://ik.imagekit.io/fsobpyaa5i/Group%2027%20(2).png"
-                                                        alt="">
+                                                    <img class="blurhash-auto"
+                                                        src="https://ik.imagekit.io/fsobpyaa5i/Group%2027%20(3).png"
+                                                        alt="#">
                                                 </div>
                                             </div>
                                             <div class="text">
-                                                <h2 class="title-animation">Domínio Personalizado para Empresas</h2>
+                                                <h2 translate="no" id="t11"  class="title-animation">Domínio Personalizado para  Empresas</h2>
                                                 <p>O 2Smart HR oferece a possibilidade de personalizar o domínio da sua
                                                     empresa, permitindo uma identidade única na plataforma. Empresas
                                                     aderentes podem ter um domínio próprio, como
@@ -467,7 +741,7 @@
                                     <div class="line-cards">
                                         <div class="box sm">
                                             <div class="text">
-                                                <h2 class="title-animation">Análise de Produtividade</h2>
+                                                <h2 class="title-animation" translate="no" id="t12" >Análise de Produtividade</h2>
                                                 <p>Software completo para marcação de presenças, atrasos e faltas com
                                                     dashboards intuitivos,
                                                     alertas automáticos e relatórios detalhados que permitem uma análise
@@ -476,19 +750,21 @@
                                             </div>
                                             <div class="image-area-block imgdb3">
                                                 <div class="image">
-                                                    <img src="https://ik.imagekit.io/fsobpyaa5i/Group%2028.png" alt="">
+                                                    <img class="blurhash-auto"
+                                                        src="https://ik.imagekit.io/fsobpyaa5i/Group%2028.png" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="box bg-teal lg">
                                             <div class="image-area-block imgdb4">
                                                 <div class="image">
-                                                    <img src="https://ik.imagekit.io/fsobpyaa5i/Group%2030456.png"
+                                                    <img class="blurhash-auto"
+                                                        src="https://ik.imagekit.io/fsobpyaa5i/Group%2030456.png"
                                                         alt="">
                                                 </div>
                                             </div>
                                             <div class="text">
-                                                <h2 class="text-white title-animation">Planificação & Férias</h2>
+                                                <h2 class="text-white title-animation" translate="no" id="t13">Planificação & Férias</h2>
                                                 <p class="text-white">Menu de planificação com mapa de férias e de
                                                     trabalho,
                                                     onde pode aprovar, recusar ou atribuir férias. Visualize facilmente
@@ -505,8 +781,9 @@
                                     <div class="line-cards">
                                         <div class="box bg-green">
                                             <div class="text">
-                                                <h2 class="text-white title-animation">Relatórios Personalizados</h2>
-                                                <p class="text-light">Crie relatórios customizados em Excel ou PDF com
+                                                <h2 class="text-white title-animation" translate="no" id="t14" >Relatórios Personalizados</h2>
+                                                <p class="text-light">Crie relatórios customizados em vários formatos
+                                                    com
                                                     visualização em tempo real.
                                                     Tenha controle total dos dados da sua organização com gráficos e
                                                     métricas acessíveis e atualizadas.
@@ -514,7 +791,8 @@
                                             </div>
                                             <div class="image-area-block imgdb5">
                                                 <div class="image">
-                                                    <img src="https://ik.imagekit.io/fsobpyaa5i/Group%2030457%20(1).png"
+                                                    <img class="blurhash-auto"
+                                                        src="https://ik.imagekit.io/fsobpyaa5i/Group%2030457%20(1).png"
                                                         alt="">
                                                 </div>
                                             </div>
@@ -522,17 +800,19 @@
                                         <div class="box">
                                             <div class="image-area-block imgdb6">
                                                 <div class="image">
-                                                    <img src="https://ik.imagekit.io/fsobpyaa5i/Group%2030458%20(1).png"
+                                                    <img class="blurhash-auto"
+                                                        src="https://ik.imagekit.io/fsobpyaa5i/Group%2030458%20(1).png"
                                                         alt="">
                                                 </div>
                                             </div>
                                             <div class="text">
-                                                <h2 class="title-animation">Exportação Inteligente</h2>
-                                                <p>Exporte relatórios para Excel com filtros personalizados e visualize
-                                                    diretamente no sistema.
-                                                    Flexibilidade e rapidez para análises avançadas com toda a
-                                                    informação que precisa.
-                                                </p>
+                                                <h2 class="title-animation" translate="no" id="15" >Exportação Inteligente</h2>
+                                                <p>Com o 2Smart, é possível agendar o envio automático de relatórios
+                                                    pela chefia, garantindo informações no momento certo.
+                                                    Exporte em vários formatos com filtros personalizados e visualize
+                                                    diretamente
+                                                    no sistema.
+                                                    Mais agilidade e controle para suas análises.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -545,17 +825,13 @@
             </div>
         </section>
 
-
-
-
-
         <!-------- 2SMART APP  ------>
         <section class="smart-app-section gradient-background">
             <div class="auto-container">
                 <div class="block-text">
                     <div class="sec-title  pb_60  ">
                         <div class="block block-1">
-                            <h6 class="sub-title mb_10 title-animation">Os melhores recursos</h6>
+                            <h6 class="sub-title mb_10 title-animation" translate="no" id="16" >Os melhores recursos</h6>
                             <h1 class="title-animation">
                                 <span>Funcionalidades</span> principais da aplicação 2Smart HR
                             </h1>
@@ -572,8 +848,8 @@
                             </div>
                         </a>
                         <div class="txt">
-                            <p class="title-animation">
-                                A app 2Smart HR oferece um conjunto poderoso de ferramentas que tornam a gestão de
+                            <p translate="no" id="17" class="title-animation">
+                                A app  2Smart  HR oferece um conjunto poderoso de ferramentas que tornam a gestão de
                                 assiduidade e RH mais simples, eficiente e totalmente automatizada – tudo ao seu
                                 alcance, em qualquer lugar.
                             </p>
@@ -589,7 +865,7 @@
                                 garantindo privacidade e acesso apenas aos colaboradores autorizados.</p>
                         </div>
                         <div class="center-image">
-                            <img src="https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%2010.png"
+                            <img class="blurhash-auto" src="https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%2010.png"
                                 alt="Autenticação biométrica">
                         </div>
                     </article>
@@ -601,7 +877,7 @@
                                 Tudo apresentado de forma clara e acessível para facilitar a gestão pessoal.</p>
                         </div>
                         <div class="center-image">
-                            <img src="https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%203.png"
+                            <img class="blurhash-auto" src="https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%203.png"
                                 alt="Menu de Produtividade">
                         </div>
                     </article>
@@ -614,7 +890,8 @@
                                 pensado para facilitar o planeamento dos colaboradores.</p>
                         </div>
                         <div class="center-image">
-                            <img src="https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%209.png" alt="Mapa de Férias">
+                            <img class="blurhash-auto" src="https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%209.png"
+                                alt="Mapa de Férias">
                         </div>
                     </article>
                 </div>
@@ -622,14 +899,9 @@
             </div>
         </section>
 
-        <!------ END ------->
-
         <div class="space-area">
             <br><br><br> <br><br><br><br><br><br> <br><br><br>
         </div>
-
-
-
 
 
 
@@ -639,8 +911,8 @@
                 <div class="content">
                     <div class="text-area">
                         <div class="sec-title centred pb_60 sec-title-animation animation-style2">
-                            <span class="sub-title mb_10 title-animation">Destaques</span>
-                            <h2 class="title-animation">Principais Diferenciais do 2Smart</h2>
+                            <span class="sub-title mb_10 title-animation" translate="no" id="t18" >Destaques</span>
+                            <h2 class="title-animation" translate="no" id="t19" >Elementos Diferenciadores do 2Smart</h2>
                             <p>Software completo para gestão de assiduidades e recursos humanos, com terminais de ponto
                                 integrados, dashboards customizados <br> relatórios detalhados de presenças e
                                 colaboradores,
@@ -651,15 +923,18 @@
                     <div class="image-area">
                         <div class="image-large">
                             <div class="image">
-                                <img src="https://ik.imagekit.io/fsobpyaa5i/Group%2030460.png" alt="image-1-1">
+                                <img class="blurhash-auto"
+                                    src="https://ik.imagekit.io/fsobpyaa5i/Group%2030465%20(2).png" alt="image-1-1">
                             </div>
                         </div>
                         <div class="small-images">
                             <div class="image">
-                                <img src="https://ik.imagekit.io/fsobpyaa5i/Group%2024%20(2).png" alt="">
+                                <img class="blurhash-auto" src="https://ik.imagekit.io/fsobpyaa5i/Group%2030464.png"
+                                    alt="">
                             </div>
                             <div class="image">
-                                <img src="https://ik.imagekit.io/fsobpyaa5i/Group%2030459.png" alt="">
+                                <img class="blurhash-auto"
+                                    src="https://ik.imagekit.io/fsobpyaa5i/Group%2030466%20(1).png" alt="">
                             </div>
                         </div>
                     </div>
@@ -675,13 +950,12 @@
             </div>
         </section>
 
-
         <!-- industries-style-four -->
         <section class="industries-style-four pt_90 pb_90">
             <div class="auto-container">
                 <div class="sec-title centred pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">Setores</span>
-                    <h2 class="title-animation">Setores Atendidos</h2>
+                    <span class="sub-title mb_10 title-animation" translate="no" id="t20" >Setores</span>
+                    <h2 class="title-animation" translate="no" id="t21" >Setores Atendidos</h2>
                     <p>Mais de <strong>30.800 colaboradores</strong> utilizam o nosso software de gestão de recursos
                         humanos <br> em diversas áreas de atividade.</p>
                 </div>
@@ -761,15 +1035,37 @@
                 </div>
             </div>
         </section>
-        <!-- industries-style-four end -->
+
+        <!-- industries-style-four -->
+        <section class="industries-style-four  pb_90">
+            <div class="auto-container">
+                <div class="sec-title centred pb_60 sec-title-animation animation-style2">
+                    <span class="sub-title mb_10 title-animation" translate="no" id="t22" >Workflow</span>
+                    <h2 class="title-animation" translate="no" id="t23" >Estruturas da Empresa</h2>
+                    <p>
+                        Organize departamentos, equipas e funções com total flexibilidade. Atribua posses e <br>
+                        responsabilidades, reflita a hierarquia real da empresa e simplifique a gestão interna.<br>
+                    </p>
+                </div>
+                <div class="row clearfix">
+
+                    <div class="image-workflow">
+                        <img class="blurhash-auto" src="https://ik.imagekit.io/fsobpyaa5i/Group%2030463%20(1).png"
+                            alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
 
         <!-- training-section -->
         <section class="training-section gradient-background">
             <br><br />
             <div class="auto-container">
                 <div class="sec-title centred pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">Testemunhos</span>
-                    <h2 class="title-animation text-white">Testemunhos mais recentes</h2>
+                    <span class="sub-title mb_10 title-animation" translate="no" id="t24" >Testemunhos</span>
+                    <h2 class="title-animation text-white" translate="no" id="t25" >Testemunhos mais recentes</h2>
                     <p class="text-light">
                         Pequenas e Médias empresas de todos os setores já estão gerenciando seus colaboradores <br>de
                         forma mais humana e
@@ -832,15 +1128,15 @@
                 </div>
             </div>
         </section>
-        <!-- training-section end -->
+
 
         <!-- Excelence-secion start  -->
         <section class="excelent-section">
             <div class="content">
                 <div class="auto-container text-area">
                     <div class="sec-title pb_20 sec-title-animation animation-style2">
-                        <span class="sub-title mb_10 title-animation">Gestão Inteligente</span>
-                        <h2 class="title-animation">Geofencing para Equipas e Projetos</h2>
+                        <span class="sub-title mb_10 title-animation" translate="no" id="t26" >Gestão Inteligente</span>
+                        <h2 class="title-animation" translate="no" id="t27" >Geofencing para Equipas e Projetos</h2>
                     </div>
                     <p>A funcionalidade de Geofencing do 2Smart HR oferece aos gestores de equipas e projetos um
                         controlo em tempo real sobre a localização e atividade dos seus colaboradores.</p>
@@ -865,15 +1161,18 @@
                         <a href="#" class="theme-btn text-white btn-one">Saiba mais</a>
                         <div class="avatars">
                             <div class="avatar-item">
-                                <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                <img class="blurhash-auto"
+                                    src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                                     alt="">
                             </div>
                             <div class="avatar-item">
-                                <img src="https://www.stylecraze.com/wp-content/uploads/2020/09/Best-Qualities-Of-A-Good-Man-That-Make-Him-Desirable_1200px.jpg.webp"
+                                <img class="blurhash-auto"
+                                    src="https://www.stylecraze.com/wp-content/uploads/2020/09/Best-Qualities-Of-A-Good-Man-That-Make-Him-Desirable_1200px.jpg.webp"
                                     alt="">
                             </div>
                             <div class="avatar-item">
-                                <img src="https://img.freepik.com/premium-photo/handsome-blond-guy-with-blue-eyes-white-t-shirt-smiling_1258-6944.jpg"
+                                <img class="blurhash-auto"
+                                    src="https://img.freepik.com/premium-photo/handsome-blond-guy-with-blue-eyes-white-t-shirt-smiling_1258-6944.jpg"
                                     alt="">
                             </div>
                         </div>
@@ -885,126 +1184,42 @@
                 </div>
 
                 <div class="image-area">
-                    <img src="https://i.postimg.cc/pL6D8B80/Group-15-2.png" alt="#">
+                    <img class="blurhash-auto" src="https://i.postimg.cc/pL6D8B80/Group-15-2.png" alt="#">
                 </div>
             </div>
         </section>
-        <!-- Excelence-secion end  -->
+
+        <!-- Integration section start  -->
 
         <section class="integration-section pt_80 pb-90">
             <div class="auto-container  text-area">
                 <div class="sec-title centred pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">Sistemas ERP</span>
-                    <h2 class="title-animation">Powerful Integration</h2><br>
+                    <span class="sub-title mb_10 title-animation" translate="no" id="t28">Sistemas ERP</span>
+                    <h2 class="title-animation" translate="no" id="t29">Powerful Integration</h2><br>
                     <p>Seja uma plataforma reconhecida no mercado ou um software desenvolvido à sua medida, o Módulo de
                         Integração com
                         ERP do 2Smart dará a resposta necessária para integrar as suas Assiduidades e automatizar
                         processos de processamento salarial.</p>
                 </div>
                 <div class="centered-image">
-                    <img src="https://i.postimg.cc/Jn8n4JXh/Sales-Report-Saas-Website-App-Figma-07-10-2025-04-08-PM.png"
+                    <img class="blurhash-auto"
+                        src="https://i.postimg.cc/Jn8n4JXh/Sales-Report-Saas-Website-App-Figma-07-10-2025-04-08-PM.png"
                         alt="">
                 </div>
             </div>
         </section>
-
-
 
         <!-- news-section -->
         <section class="news-section pt_80 pb_90">
             <br>
             <div class="auto-container">
                 <div class="sec-title centred pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">Formações & Apresentações</span>
-                    <h2 class="title-animation">Eventos Recentes</h2>
+                    <span class="sub-title mb_10 title-animation" translate="no"  id="t30" >Formações & Apresentações</span>
+                    <h2 class="title-animation" translate="no" id="t31" >Eventos Recentes</h2>
                 </div>
-                <div class="row clearfix">
-
-                    <!-- Funchal -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box" style="max-height:410px; overflow:hidden;">
-                                    <figure class="image" style="width:100%; height:230px; object-fit:cover;">
-                                        <a href="blog-details.html"><img src="https://i.ibb.co/4wt5ZMCM/IMG-7905.jpg"
-                                                alt="Formação Funchal"
-                                                style="width:100%; height:auto; max-height:410px; object-fit:cover;"></a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <span class="category">Funchal</span>
-                                    <h3><a href="blog-details.html">Formação e Apresentação 2Smart</a></h3>
-                                    <ul class="post-info">
-                                        <li><span>26 & 27 de Maio 2025</span></li>
-                                    </ul>
-                                    <p>Realizámos formações gratuitas no Funchal, onde ensinámos a usar o software e
-                                        apresentámos a aplicação 2Smart.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Porto -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box" style="max-height:410px; overflow:hidden;">
-                                    <figure class="image" style="width:100%; height:230px; object-fit:cover;">
-                                        <a href="blog-details.html"><img src="https://i.ibb.co/nMRK9jkk/IMG-7990.jpg"
-                                                alt="Formação Porto"
-                                                style="width:100%; height:auto; max-height:410px; object-fit:cover;"></a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <span class="category">Porto</span>
-                                    <h3><a href="blog-details.html">Sessão de Formação e Demonstração</a></h3>
-                                    <ul class="post-info">
-                                        <li><span>29 de Maio 2025</span></li>
-                                    </ul>
-                                    <p>No Porto, realizámos formação gratuita para clientes, focada no uso prático do
-                                        software e apresentação da app 2Smart.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Lisboa -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box" style="max-height:410px; overflow:hidden;">
-                                    <figure class="image" style="width:100%; height:230px; object-fit:cover;">
-                                        <a href="blog-details.html"><img
-                                                src="https://images.mnstatic.com/d5/ea/d5ea8aa8b0d73a5caed9f1e8aed1015d.jpg"
-                                                alt="Formação Lisboa"
-                                                style="width:100%; height:auto; max-height:410px; object-fit:cover;"></a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <span class="category">Lisboa</span>
-                                    <h3><a href="blog-details.html">Workshop com Clientes Finais & revendedores</a></h3>
-                                    <ul class="post-info">
-                                        <li><span>30 de Maio 2025</span></li>
-                                    </ul>
-                                    <p>Em Lisboa, demos formação gratuita e mostramos a aplicação 2Smart, facilitando a
-                                        gestão do software aos clientes finais.</p>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                <div class="row clearfix" id="latest-tree-posts"></div>
             </div>
         </section>
-        <!-- news-section end -->
-
-
-
 
 
         <!-- main-footer -->
@@ -1015,7 +1230,7 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget logo-widget mr_30">
                                 <figure class="footer-logo mb_20">
-                                    <a href="index.html"><img
+                                    <a href="index.html"><img class="blurhash-auto"
                                             src="https://ik.imagekit.io/fsobpyaa5i/Ativo%208%20(2).png" alt=""></a>
                                 </figure>
                                 <p>O 2Smart revolucionou a gestão de assiduidades com uma abordagem inovadora e centrada
@@ -1034,9 +1249,7 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li>
-                                            <a href="#">Soluções</a>
-                                        </li>
+
                                         <li><a href="contact.html">Contatos</a></li>
                                         <li><a href="request-budget.html">Solicitar orçamento</a></li>
                                         <li><a href="about.html">Sobre nós</a></li>
@@ -1068,7 +1281,7 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li><a href="#">Centro de ajuda</a></li>
+
                                         <li><a href="privacy-and-policy.html">Politicas de Privacidade </a></li>
                                         <li><a href="terms-and-conditions.html">Termos e condições</a></li>
                                     </ul>
@@ -1090,20 +1303,20 @@
                 </div>
             </div>
         </footer>
-        <!-- main-footer end -->
-
-
-
-
     </div>
+    </div>
+</div>
 
     <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
     <script src="https://static.elfsight.com/platform/platform.js" async></script>
-    <div class="elfsight-app-e7374265-fa21-4619-9203-ee2053f490bc" data-elfsight-app-lazy></div>
-
-    <!-- jequery plugins -->
+     <div translate="no" class="elfsight-app-e7374265-fa21-4619-9203-ee2053f490bc" data-elfsight-app-lazy></div>  
     <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script> 
+    <div id="google_translate_element"></div> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
     <script src="assets/js/owl.js"></script>
     <script src="assets/js/wow.js"></script>
     <script src="assets/js/validation.js"></script>
@@ -1122,10 +1335,10 @@
     <script src="assets/js/odometer.js"></script>
     <script src="assets/js/jquery.lettering.min.js"></script>
     <script src="assets/js/jquery.circleType.js"></script>
-
-    <!-- main-js -->
     <script src="assets/js/script.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="assets/js/main.js"></script>
     <script>
 
         let TabContainer = document.querySelector(".tab-content");
@@ -1144,7 +1357,6 @@
             }
         }
 
-
         setInterval(() => {
             let link = document.querySelector(".es-portal-root a");
             if (link) {
@@ -1153,7 +1365,6 @@
             }
         }, 1000);
     </script>
-
-</body><!-- End of .page_wrapper -->
+</body>
 
 </html>
