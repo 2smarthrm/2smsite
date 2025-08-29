@@ -2174,7 +2174,7 @@
  body .custom-header .line::after {
    content: "";
    position: absolute;
-   left: 0px;
+   left:-6px;
    top: 35px;
    background-image: url("https://ik.imagekit.io/fsobpyaa5i/Vector-1.png");
    width: 250px;
@@ -2184,6 +2184,10 @@
    background-size: contain;
  }
 
+  body .custom-header .line::after{
+    display: none !important;
+    opacity:0px !important;
+ }
 
  body .custom-header::after {
    content: "";
@@ -3556,7 +3560,7 @@ body ol.mega-menu menu .app-image img{
  body .price-area .prices-area-features article .image {
    max-width: 700px;
    margin-right: 40px;
-   min-width: 700px;
+   min-width:500px;
  }
 
  body .price-area .prices-area-features article img {
@@ -3921,3 +3925,111 @@ body .service-details .service-header-image.sv6 {
         flex-wrap: wrap;
         flex-direction: row !important;
     }
+
+    .mobile-lang{
+      display: none;
+    }
+
+    body .social-box{
+      padding:10px 15px;
+      color:#fff !important;
+      background-color:var(--theme-color);
+      font-size:16px;
+      border-radius:110px;
+      display: flex;
+      align-items: center;
+      width: max-content !important;
+    }
+
+    body .social-box i{
+      font-size:20px !important;
+      margin-right:10px;
+      color:#fff !important;
+    }
+
+    body .social-box span{
+      color:#fff !important;
+    }
+
+
+    /*Ajustes na pagina d edetalhs do blog */
+
+
+    body .details-blog{
+      font-family:var(--text-font) !important;
+    }
+
+ 
+
+    body .blog-sticky-area{
+      position: relative;
+      min-width:390px;
+      width:390px;
+      padding-right:60px;
+    }
+
+    body .blog-sticky-area .smart-art{
+      min-width:100%;
+      height:500px;
+      background:var(--theme-color) !important;
+      border-radius:10px;
+      margin-top:30px;
+    }
+ 
+    body .blog-sticky-area .smart-art img{
+     width:100%;
+     height:100%;
+     border-radius:10px;
+    }
+ 
+    body #details-blog img{
+      border-radius:6px;
+    }
+
+    body .blog-sticky-area article{ 
+       display: flex;
+       margin-top:20px;
+    }
+
+   body .blog-sticky-area article img{ 
+      width:100px;
+      min-width:150px;
+      border-radius:6px;
+   }
+
+  body .blog-sticky-area article .block-description{ 
+    padding-left:20px;
+  }
+  
+  body .blog-sticky-area article .block-description h5{ 
+    font-size:16px;
+    margin-bottom:5px;
+  }
+
+    
+  body .blog-sticky-area article .block-description span{ 
+      font-size:12px;
+  }
+  
+ 
+ 
+  /* Cor de fundo do placeholder */
+.placeholder {
+  background-color: #f2f3fc !important; /* fundo suave */
+  opacity: 1; /* transparência total do fundo */
+}
+
+/* Efeito shimmer (onda animada) */
+.placeholder-wave::after {
+  background-image: linear-gradient(
+    90deg,
+    rgba(1,100,255,0) 0%,        /* azul transparente no começo */
+    rgba(1,100,255,0.3) 20%,     /* azul suave no meio */
+    rgba(1,100,255,0.5) 60%,     /* azul mais intenso */
+    rgba(1,100,255,0) 100%       /* transparente no fim */
+  ) !important;
+}
+
+ body .price-box{
+  font-weight: bold !important;
+ }

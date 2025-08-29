@@ -1,17 +1,16 @@
+////   estou. ater um problema quando estou na rea ou secção dos tres umtimos post ou dos posts gerais ele trava apos o carregamento dos ppst o que me impede de  ir pra parte inferio ou sej ao conteudo abaixo disto outras secções. queria uma soluação. estava apesnar em incialmnte ter um loader se é que istoi parace mais viavel, fazer essa alteração  e devolver fullcode. a inha ideia era carregar os osts 2s apos. apgina estar prepada, e não adcionar um loader no body mas sim um boostap loader emm cada seclção em que estamos a adcionar os multiplos posts. aletara o code. devolver ele full:
 
-
-
-
-
-$(document).ready(function () {
-  const apiKey = 'ce97301ced6e459ab281b011e45529e2';
-  const url = `http://localhost:3000/api/blogs`;
+$(document).ready(function () { 
+  setTimeout(() => {
+      const url = `https://2smartblog.vercel.app/api/blogs`;
 
   $.ajax({
     url: url,
     method: 'GET',
     success: function (response) {
+      console.log(response)
       if (response.status !== "ok") return;
+
 
       const validArticles = response.articles.filter(a => a.urlToImage);
       if (validArticles.length === 0) return;
@@ -35,7 +34,7 @@ $(document).ready(function () {
       buildTabsAndContent(grouped, allArticles);
       setupTabSwitching();
     },
-    error: function (xhr, status, error) {
+    error: function (xhr, status, error) { 
       console.error("Erro ao buscar notícias:", error);
     }
   });
@@ -156,7 +155,7 @@ $(document).ready(function () {
                 <div class="lower-content">
                   <span class="category">${a.category}</span>
                   <h3><a href="blog-details.html?title=${encodeURIComponent(a.title)}">${truncateText(a.title, 50)}</a></h3>
-                   <p class="news-description">${truncateText(a.short_description || a.content || '', 80)}</p>  
+                   <p class="news-description">${truncateText(a.short_description || a.content || '', 60)}</p>  
                   <ul class="post-info">
                     <br/>  <br/>
                     <li><strong>${formatDate(a.publishedAt)}</strong></li>
@@ -243,12 +242,38 @@ $(document).ready(function () {
       return;
     }
 
-    renderDetails(found);
+   renderDetails(found);
+    
+  const otherArticles = response.articles.filter(a => a.title !== found.title && a.urlToImage).slice(0, 2); 
+  renderMoreNews(otherArticles);
+
+  
   });
 
 
+ 
 
+function renderMoreNews(articles) {
+  const $container = $('#more-news');
+  $container.empty();
 
+  articles.forEach(a => {
+    const html = `
+      <article>
+        <a href="blog-details.html?title=${encodeURIComponent(a.title)}">
+          <img src="${a.urlToImage}" alt="${a.title}">
+        </a>
+        <div class="block-description">
+          <a href="blog-details.html?title=${encodeURIComponent(a.title)}">
+            <h5>${truncateText(a.title, 40)}</h5>
+          </a>
+          <span class="text-primary">${formatDate(a.publishedAt)}</span>
+        </div>
+      </article>
+    `;
+    $container.append(html);
+  });
+}
 
 
 
@@ -272,7 +297,7 @@ $(document).ready(function () {
             <div class="lower-content">
               <span class="category">${a.category || 'Notícia'}</span>
               <h3><a href="blog-details.html?title=${encodeURIComponent(a.title)}">${truncateText(a.title, 45)}</a></h3>
-              <p>${truncateText(a.short_description || a.content || '', 75)}</p>
+              <p>${truncateText(a.short_description || a.content || '', 60)}</p>
               <br/> 
                <ul class="post-info">
                   <li><strong>${formatDate(a.publishedAt)}</strong></li>
@@ -286,20 +311,23 @@ $(document).ready(function () {
     });
   }
 
-
-
+ 
 
   function renderDetails(article) {
-    const formattedDate = new Date(article.publishedAt).toLocaleDateString('pt-BR', {
-      day: '2-digit', month: 'long', year: 'numeric'
-    });
+  const formattedDate = new Date(article.publishedAt).toLocaleDateString('pt-BR', {
+    day: '2-digit', month: 'long', year: 'numeric'
+  });
 
-    const author = article.author || 'Redação';
-    const source = article.category || 'Notícia';
-    const title = article.title;
-    const image = article.urlToImage;
-    const description = article.description || '';
-    const content = article.content || '';
+  const author = article.author || 'Redação';
+  const source = article.category || 'Notícia';
+  const title = article.title;
+  const image = article.urlToImage;
+  const description = article.description || '';
+  const content = article.content || '';
+ 
+  $('meta[property="og:title"]').attr("content", title);
+  $('meta[property="og:description"]').attr("content", description);
+  $('meta[property="og:image"]').attr("content", image);
 
     const html = `
         <div class="inner-box">
@@ -309,11 +337,7 @@ $(document).ready(function () {
             <ul class="post-info"> 
               <li><span>${formattedDate}</span></li>
             </ul>
-          </div>
-          <br>
-          <div class="image-blog">
-            <img src="${image}" alt="${title}">
-          </div>
+          </div> 
           <div class="text-box pt_25 mb_0">
             <div class="mb_30">${description}</div> 
             <br> 
@@ -321,11 +345,15 @@ $(document).ready(function () {
         </div>`;
 
     $('#details-blog').html(html);
-  }
+}
+
+
+
 
   function truncateText(text, max) {
     return text?.length > max ? text.slice(0, max) + '...' : text || '';
   }
+  }, 1500);
 });
 
 
@@ -927,10 +955,10 @@ const translations = {
 
 /** Prices */
 "t85": {
-  "pt": "Gestão de Assiduidades e equipas desde <br><span>4,50€/ano</span> por colaborador",
-  "en": "Attendance and team management from <br><span>€4.50/year</span> per employee",
-  "es": "Gestión de Asistencias y equipos desde <br><span>4,50€/año</span> por empleado",
-  "fr": "Gestion des présences et des équipes à partir de <br><span>4,50€/an</span> par collaborateur"
+  "pt": "Gestão de Assiduidades e equipas desde <br><span class='price-box' >0,75€ / mês</span> por colaborador",
+  "en": "Attendance and team management from <br><span class='price-box'>€0.75 / month</span> per employee",
+  "es": "Gestión de asistencias y equipos desde <br><span>0,75€ / mes</span> por empleado",
+  "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>0,75€ / mois</span> par collaborateur"
 },
 "t86": {
   "pt": "Gestão Centralizada em Cloud com Terminais Integrados",
@@ -1035,37 +1063,118 @@ const translations = {
     "en": ``,
     "es": ``,
     "fr": ``
-  },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }, 
 };
 
+const imageTranslations = {
+  "img-1": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/kiosso_image%20(1).png",
+    en: "",
+    es: "",
+    fr: ""
+  },
+  "img-2": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2026.png ",
+    en: "https://ik.imagekit.io/fsobpyaa5i/img-1-ingles.png",
+    es: "https://ik.imagekit.io/fsobpyaa5i/img-1-espanhol.png",
+    fr: "https://ik.imagekit.io/fsobpyaa5i/img-1-frances.png"
+  },
+  "img-3": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2028.png",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-4": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030456.png",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-5": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030458%20(1).png",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-6": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%2010.png",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-7": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%203.png",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-8": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%209.png",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-9": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030465%20(2).png",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-10": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030464.png",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-11": {
+    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030463%20(1).png",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-12": {
+    pt: " ",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-13": {
+    pt: " ",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-14": {
+    pt: " ",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+  "img-15": {
+    pt: " ",
+    en: " ",
+    es: " ",
+    fr: " "
+  },
+};
 
-
-// --- FUNÇÃO PARA APLICAR TRADUÇÃO CUSTOM ---
+// --- FUNÇÃO PARA APLICAR TRADUÇÃO DE TEXTOS ---
 function applyCustomTranslations(lang) {
   Object.keys(translations).forEach(key => {
-    const el = document.getElementById(`${key}`);
+    const el = document.getElementById(key);
     if (el && translations[key][lang]) {
       el.innerHTML = translations[key][lang];
+    }
+  });
+}
+
+// --- FUNÇÃO PARA TROCAR IMAGENS ---
+function applyImageTranslations(lang) {
+  Object.keys(imageTranslations).forEach(key => {  
+    const el = document.getElementById(key);
+    if (el && imageTranslations[key][lang]) {
+      el.src = imageTranslations[key][lang]; 
     }
   });
 }
@@ -1085,6 +1194,9 @@ function setLanguage(lang, code) {
 
   // Aplica traduções customizadas
   applyCustomTranslations(lang);
+
+  // Aplica troca de imagens
+  applyImageTranslations(lang);
 
   // Salva no localStorage
   localStorage.setItem('selectedLang', lang);
@@ -1128,12 +1240,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setTimeout(() => {
     applyCustomTranslations(savedLang);
+    applyImageTranslations(savedLang);
   }, 1000);
 });
 
-
-
-
+// --- MENU MOBILE (se existir) ---
 let menu = document.querySelector(".mg-menu");
 if (menu) {
     let toggle = document.querySelectorAll(".toggle-services-menu");
@@ -1146,3 +1257,4 @@ if (menu) {
         });
     });
 }
+ 
