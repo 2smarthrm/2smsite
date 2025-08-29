@@ -1,0 +1,45 @@
+ <div class="row clearfix" id="content-todos">
+          <div class="col-lg-4 col-md-4 col-sm-12 news-block">
+            <div class="news-block-two wow fadeInUp animated">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    <a href="blog-details.html?title=Geofencing%3A%20Tecnologia%20para%20Gest%C3%A3o%20de%20Ponto">
+                      <img src="https://ik.imagekit.io/fsobpyaa5i/o-que-e-geofencing-como-funciona.jpg" alt="">
+                    </a>
+                  </figure>
+                </div>
+                <div class="lower-content">
+                  <span class="category">Assiduidade</span>
+                  <h3><a href="blog-details.html?title=Geofencing%3A%20Tecnologia%20para%20Gest%C3%A3o%20de%20Ponto">Geofencing: Tecnologia para Gestão de Ponto</a></h3>
+                   <p class="news-description">Com o geofencing, é possível criar uma “cerca virtual” ao re...</p>  
+                  <ul class="post-info">
+                    <br>  <br>
+                    <li><strong>14 de agosto de 2025</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 news-block">
+            <div class="news-block-two wow fadeInUp animated">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    <a href="blog-details.html?title=Como%20L%C3%ADderes%20Internos%20Impulsionam%20Inova%C3%A7%C3%A3o%20e%20Resultados">
+                      <img src="https://ik.imagekit.io/fsobpyaa5i/indian-senior-business-leader-addressing-young-pro-2025-04-30-23-50-13-utc.jpg" alt="">
+                    </a>
+                  </figure>
+                </div>
+                <div class="lower-content">
+                  <span class="category">Productividade</span>
+                  <h3><a href="blog-details.html?title=Como%20L%C3%ADderes%20Internos%20Impulsionam%20Inova%C3%A7%C3%A3o%20e%20Resultados">Como Líderes Internos Impulsionam Inovação e Resul...</a></h3>
+                   <p class="news-description">Descubra como a liderança intraempreendedora transforma empr...</p>  
+                  <ul class="post-info">
+                    <br>  <br>
+                    <li><strong>14 de julho de 2025</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div></div>
