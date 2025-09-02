@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Konrix_React/Admin"
+		},
+		{
+			"path": "../../frogetor_v1.0/Admin/horizontal"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "2smartnewsite"
+	}
+}
