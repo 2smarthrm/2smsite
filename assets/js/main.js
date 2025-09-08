@@ -1,4 +1,4 @@
-////   estou. ater um problema quando estou na rea ou secção dos tres umtimos post ou dos posts gerais ele trava apos o carregamento dos ppst o que me impede de  ir pra parte inferio ou sej ao conteudo abaixo disto outras secções. queria uma soluação. estava apesnar em incialmnte ter um loader se é que istoi parace mais viavel, fazer essa alteração  e devolver fullcode. a inha ideia era carregar os osts 2s apos. apgina estar prepada, e não adcionar um loader no body mas sim um boostap loader emm cada seclção em que estamos a adcionar os multiplos posts. aletara o code. devolver ele full:
+
 $(document).ready(function () {
   setTimeout(() => {
     const url = `https://2smartblog.vercel.app/api/blogs`;
