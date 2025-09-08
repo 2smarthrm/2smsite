@@ -1,360 +1,427 @@
 ////   estou. ater um problema quando estou na rea ou secção dos tres umtimos post ou dos posts gerais ele trava apos o carregamento dos ppst o que me impede de  ir pra parte inferio ou sej ao conteudo abaixo disto outras secções. queria uma soluação. estava apesnar em incialmnte ter um loader se é que istoi parace mais viavel, fazer essa alteração  e devolver fullcode. a inha ideia era carregar os osts 2s apos. apgina estar prepada, e não adcionar um loader no body mas sim um boostap loader emm cada seclção em que estamos a adcionar os multiplos posts. aletara o code. devolver ele full:
-
-$(document).ready(function () { 
+$(document).ready(function () {
   setTimeout(() => {
-      const url = `https://2smartblog.vercel.app/api/blogs`;
+    const url = `https://2smartblog.vercel.app/api/blogs`;
 
-  $.ajax({
-    url: url,
-    method: 'GET',
-    success: function (response) {
-      console.log(response)
-      if (response.status !== "ok") return;
+    // ---------- STATE ----------
+    // Estrutura de estado por aba: { activeTab: string, pages: { [paneId]: number } }
+    const STATE_KEY = 'newsTabsState';
+    const tabControllers = new Map(); // key: paneId, value: { show(p), page, total }
+    let state = loadState() || { activeTab: 'todos', pages: {} };
 
-
-      const validArticles = response.articles.filter(a => a.urlToImage);
-      if (validArticles.length === 0) return;
-
-      // Inserir a última notícia na área dedicada 
-      insertLatestThreePosts(validArticles.slice(0, 3));
-      insertLatestNews(validArticles[0]);
-
-
-      // Criar a aba "Todas" com todas as notícias (exceto a última, já usada)
-      const allArticles = validArticles.slice(1);
-
-      // Agrupar artigos restantes por categoria (source.name)
-      const grouped = allArticles.reduce((acc, a) => {
-        const cat = a.category || 'Outros';
-        acc[cat] = acc[cat] || [];
-        acc[cat].push(a);
-        return acc;
-      }, {});
-
-      buildTabsAndContent(grouped, allArticles);
-      setupTabSwitching();
-    },
-    error: function (xhr, status, error) { 
-      console.error("Erro ao buscar notícias:", error);
+    // Util: ler/gravar estado
+    function saveState(pushHistory = true) {
+      try { sessionStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch (_) {}
+      // guarda em URL sem recarregar (facilita "voltar")
+      if (pushHistory) {
+        const urlObj = new URL(window.location.href);
+        urlObj.searchParams.set('tab', state.activeTab);
+        const page = state.pages[state.activeTab] || 1;
+        urlObj.searchParams.set('page', String(page));
+        history.pushState({ tab: state.activeTab, page }, '', urlObj.toString());
+      }
     }
-  });
+    function loadState() {
+      try { return JSON.parse(sessionStorage.getItem(STATE_KEY) || ''); } catch (_) { return null; }
+    }
 
+    // Restaura a partir do URL (permite partilhar link direto ou voltar)
+    function initStateFromURL() {
+      const urlObj = new URL(window.location.href);
+      const tab = urlObj.searchParams.get('tab');
+      const page = parseInt(urlObj.searchParams.get('page') || '1', 10);
+      if (tab) {
+        state.activeTab = tab;
+        if (Number.isFinite(page) && page > 0) state.pages[tab] = page;
+      }
+    }
+    initStateFromURL();
 
-  function insertLatestNews(article) {
-    const image = article.urlToImage || 'fallback.jpg';
-    const title = article.title || 'Título indisponível';
-    const date = formatDate(article.publishedAt);
-    const desc = truncateText(article.short_description || article.content || '', 250);
-    const link = article.url || '#';
-    const source = article.category || 'Notícia';
+    // popstate (botão voltar/avançar do browser)
+    window.addEventListener('popstate', (ev) => {
+      const tab = ev.state?.tab || state.activeTab || 'todos';
+      const page = ev.state?.page || state.pages[tab] || 1;
+      state.activeTab = tab;
+      state.pages[tab] = page;
+      setActiveTab(tab, /*pushHistory*/ false);
+    });
 
-    const html = ` 
-      <div class="image-area">
-        <a href="blog-details.html?title=${encodeURIComponent(title)}">
-          <img src="${image}" alt="">
-        </a>
-      </div>
-      <div class="content-box mr_80">
-        <div class="sec-title pb_20 sec-title-animation animation-style2">
-          <span class="sub-title mb_10 title-animationx">${source}</span> 
-            <a href="blog-details.html?title=${encodeURIComponent(title)}"> <h3 class="title-animationx">${title}</h3></a>
-           
-          <br>
-          <strong>${date}</strong>
+    // ---------- FETCH ----------
+    $.ajax({
+      url,
+      method: 'GET',
+      success: function (response) {
+        if (response?.status !== "ok") return;
+
+        const validArticles = (response.articles || []).filter(a => a?.urlToImage);
+        if (!validArticles.length) return;
+
+        insertLatestThreePosts(validArticles.slice(0, 3));
+        insertLatestNews(validArticles[0]);
+
+        const allArticles = validArticles.slice(1);
+
+        const grouped = allArticles.reduce((acc, a) => {
+          const cat = a?.category || 'Outros';
+          (acc[cat] ||= []).push(a);
+          return acc;
+        }, {});
+
+        buildTabsAndContent(grouped, allArticles);
+        setupTabSwitching();
+        setupExternalToggles(); // <— trata dos botões/links que abrem categorias
+
+        // Abre a aba inicial (vinda do URL ou do storage)
+        setActiveTab(state.activeTab || 'todos', /*pushHistory*/ false);
+      },
+      error: function (xhr, status, error) {
+        console.error("Erro ao buscar notícias:", error);
+      }
+    });
+
+    // ---------- RENDER TOP ----------
+    function insertLatestNews(article) {
+      const image = article.urlToImage || 'fallback.jpg';
+      const title = article.title || 'Título indisponível';
+      const date = formatDate(article.publishedAt);
+      const desc = truncateText(article.short_description || article.content || '', 250);
+      const source = article.category || 'Notícia';
+
+      const html = `
+        <div class="image-area">
+          <a href="blog-details.html?title=${encodeURIComponent(title)}">
+            <img src="${image}" alt="">
+          </a>
         </div>
-        <div class="text-box">
-          <p>${desc}</p>
-        </div>
-      </div> 
-  `;
+        <div class="content-box mr_80">
+          <div class="sec-title pb_20 sec-title-animation animation-style2">
+            <span class="sub-title mb_10 title-animationx">${source}</span>
+            <a href="blog-details.html?title=${encodeURIComponent(title)}">
+              <h3 class="title-animationx">${title}</h3>
+            </a>
+            <br>
+            <strong>${date}</strong>
+          </div>
+          <div class="text-box">
+            <p>${desc}</p>
+          </div>
+        </div>`;
+      $('.blog-latest').html(html);
+    }
 
-    $('.blog-latest').html(html);
-  }
-
-  // Monta tabs e conteúdo, adiciona aba "Todas" primeiro
-  function buildTabsAndContent(grouped, allArticles) {
-    const tabList = $('#pills-tab');
-    const tabContent = $('#pills-tabContent');
-
-    // Aba "Todas"
-    tabList.append(`
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-tab="todos" type="button" role="tab" aria-selected="true">Todas</button>
-      </li>`);
-
-    tabContent.append(`
-      <div class="tab-pane" id="todos">
-        <div class="row clearfix">
-          <div class="col-md-12 content-side">
-            <div class="blog-grid-content pagination-content-area">
-              <div class="row clearfix" id="content-todos"></div>
-              <div class="pagination-wrapper">
-                <ul class="pagination clearfix" id="pagination-todos"></ul>
+    function insertLatestThreePosts(articles) {
+      const $container = $('#latest-tree-posts');
+      $container.empty();
+      articles.forEach(a => {
+        const html = `
+        <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+          <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <div class="inner-box">
+              <div class="image-box" style="max-height:410px; overflow:hidden;">
+                <figure class="image" style="width:100%; height:230px; object-fit:cover;">
+                  <a href="blog-details.html?title=${encodeURIComponent(a.title)}">
+                    <img class="blurhash-auto" src="${a.urlToImage}" alt="${a.title}" style="width:100%; height:auto; min-height:400px; max-height:410px; object-fit:cover;">
+                  </a>
+                </figure>
+              </div>
+              <div class="lower-content">
+                <span class="category">${a.category || 'Notícia'}</span>
+                <h3><a href="blog-details.html?title=${encodeURIComponent(a.title)}">${truncateText(a.title, 45)}</a></h3>
+                <p>${truncateText(a.short_description || a.content || '', 60)}</p>
+                <br/>
+                <ul class="post-info">
+                  <li><strong>${formatDate(a.publishedAt)}</strong></li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </div>`);
+        </div>`;
+        $container.append(html);
+      });
+    }
 
-    renderArticles('#content-todos', '#pagination-todos', allArticles);
+    // ---------- TABS ----------
+    function buildTabsAndContent(grouped, allArticles) {
+      const tabList = $('#pills-tab');
+      const tabContent = $('#pills-tabContent');
 
-    // Categorias
-    let idx = 0;
-    Object.entries(grouped).forEach(([cat, arts]) => {
-      const paneId = `pane-${idx}`;
-      const tabId = `tab-${idx}`;
+      tabList.empty();
+      tabContent.empty();
 
+      // Aba "Todas"
       tabList.append(`
         <li class="nav-item" role="presentation">
-          <button class="nav-link" data-tab="${paneId}" type="button" role="tab" aria-selected="false">${cat}</button>
+          <button class="nav-link" data-tab="todos" type="button" role="tab" aria-selected="false">Todas</button>
         </li>`);
 
       tabContent.append(`
-        <div class="tab-pane d-none" id="${paneId}">
+        <div class="tab-pane" id="todos">
           <div class="row clearfix">
             <div class="col-md-12 content-side">
               <div class="blog-grid-content pagination-content-area">
-                <div class="row clearfix" id="content-${paneId}"></div>
+                <div class="row clearfix" id="content-todos"></div>
                 <div class="pagination-wrapper">
-                  <ul class="pagination clearfix" id="pagination-${paneId}"></ul>
+                  <ul class="pagination clearfix" id="pagination-todos"></ul>
                 </div>
               </div>
             </div>
           </div>
         </div>`);
 
-      renderArticles(`#content-${paneId}`, `#pagination-${paneId}`, arts);
-      idx++;
-    });
-  }
+      createRenderController('todos', '#content-todos', '#pagination-todos', allArticles);
 
-  // Função para renderizar artigos e paginação
-  function renderArticles(containerSel, paginationSel, articles) {
-    const $container = $(containerSel);
-    const $pagination = $(paginationSel);
-    const perPage = 6;
-    let page = 1;
-    const total = Math.ceil(articles.length / perPage);
+      // Categorias
+      let idx = 0;
+      Object.entries(grouped).forEach(([cat, arts]) => {
+        const paneId = `pane-${idx}`;
 
-    const show = (p) => {
-      page = p;
-      $container.empty();
+        tabList.append(`
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-tab="${paneId}" type="button" role="tab" aria-selected="false">${cat}</button>
+          </li>`);
 
-      articles.slice((p - 1) * perPage, p * perPage).forEach(a => {
-        $container.append(`
-          <div class="col-lg-4 col-md-4 col-sm-12 news-block">
-            <div class="news-block-two wow fadeInUp animated">
-              <div class="inner-box">
-                <div class="image-box">
-                  <figure class="image">
-                    <a href="blog-details.html?title=${encodeURIComponent(a.title)}">
-                      <img src="${a.urlToImage}" alt="">
-                    </a>
-                  </figure>
-                </div>
-                <div class="lower-content">
-                  <span class="category">${a.category}</span>
-                  <h3><a href="blog-details.html?title=${encodeURIComponent(a.title)}">${truncateText(a.title, 50)}</a></h3>
-                   <p class="news-description">${truncateText(a.short_description || a.content || '', 60)}</p>  
-                  <ul class="post-info">
-                    <br/>  <br/>
-                    <li><strong>${formatDate(a.publishedAt)}</strong></li>
-                  </ul>
+        tabContent.append(`
+          <div class="tab-pane d-none" id="${paneId}">
+            <div class="row clearfix">
+              <div class="col-md-12 content-side">
+                <div class="blog-grid-content pagination-content-area">
+                  <div class="row clearfix" id="content-${paneId}"></div>
+                  <div class="pagination-wrapper">
+                    <ul class="pagination clearfix" id="pagination-${paneId}"></ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>`);
+
+        createRenderController(paneId, `#content-${paneId}`, `#pagination-${paneId}`, arts);
+        idx++;
       });
-
-      // Paginação
-      $pagination.empty();
-
-      const left = $(`<li class="left-arrow"><a href="#"${page === 1 ? ' class="disabled"' : ''}><i class="icon-34"></i></a></li>`);
-      left.click(e => {
-        e.preventDefault();
-        if (page > 1) show(page - 1);
-      });
-      $pagination.append(left);
-
-      for (let i = 1; i <= total; i++) {
-        const li = $(`<li><a href="#"${i === page ? ' class="current"' : ''}>${i}</a></li>`);
-        li.click(e => {
-          e.preventDefault();
-          show(i);
-        });
-        $pagination.append(li);
-      }
-
-      const right = $(`<li class="right-arrow"><a href="#"${page === total ? ' class="disabled"' : ''}><i class="icon-35"></i></a></li>`);
-      right.click(e => {
-        e.preventDefault();
-        if (page < total) show(page + 1);
-      });
-      $pagination.append(right);
-    };
-
-    show(1);
-  }
-
-  // Trunca texto para limite máximo
-  function truncateText(text, max) {
-    return text?.length > max ? text.slice(0, max) + '...' : text || '';
-  }
-
-  // Formata data para pt-BR
-  function formatDate(dt) {
-    return new Date(dt).toLocaleDateString('pt-BR', {
-      day: '2-digit', month: 'long', year: 'numeric'
-    });
-  }
-
-  // Configura troca das tabs, ativando uma só e aplicando d-none no conteúdo
-  function setupTabSwitching() {
-    $('#pills-tab').on('click', 'button.nav-link', function () {
-      const selectedTab = $(this).data('tab');
-
-      // Ativa o botão correto
-      $('#pills-tab button.nav-link').removeClass('active').attr('aria-selected', 'false');
-      $(this).addClass('active').attr('aria-selected', 'true');
-
-      // Mostra só o conteúdo da tab ativa, oculta os demais (com d-none)
-      $('#pills-tabContent .tab-pane').addClass('d-none');
-      $(`#${selectedTab}`).removeClass('d-none');
-    });
-  }
-
-
-  const params = new URLSearchParams(window.location.search);
-  const titleParam = decodeURIComponent(params.get('title'));
-
-  if (!titleParam) {
-    $('.details-blog').html('<p>Notícia não encontrada.</p>');
-    return;
-  }
-
-  $.get(url, function (response) {
-    if (response.status !== 'ok') return;
-
-    const found = response.articles.find(article => article.title === titleParam);
-
-    if (!found) {
-      $('.details-blog').html('<p>Notícia não encontrada.</p>');
-      return;
     }
 
-   renderDetails(found);
-    
-  const otherArticles = response.articles.filter(a => a.title !== found.title && a.urlToImage).slice(0, 2); 
-  renderMoreNews(otherArticles);
+    // Controller por aba com preservação de página + atualização de estado
+    function createRenderController(paneId, containerSel, paginationSel, articles) {
+      const $container = $(containerSel);
+      const $pagination = $(paginationSel);
+      const perPage = 6;
+      const total = Math.max(1, Math.ceil(articles.length / perPage));
+      let page = clamp(state.pages[paneId] || 1, 1, total);
 
-  
-  });
+      function drawPage(p, persist = true) {
+        page = clamp(p, 1, total);
 
+        // Atualiza estado desta aba
+        state.pages[paneId] = page;
+        if (persist && state.activeTab === paneId) saveState(/*pushHistory*/ true);
 
- 
+        $container.empty();
 
-function renderMoreNews(articles) {
-  const $container = $('#more-news');
-  $container.empty();
+        const start = (page - 1) * perPage;
+        const end = page * perPage;
+        articles.slice(start, end).forEach(a => {
+          $container.append(`
+            <div class="col-lg-4 col-md-4 col-sm-12 news-block">
+              <div class="news-block-two wow fadeInUp animated">
+                <div class="inner-box">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a href="blog-details.html?title=${encodeURIComponent(a.title)}">
+                        <img src="${a.urlToImage}" alt="">
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="lower-content">
+                    <span class="category">${a.category || 'Notícia'}</span>
+                    <h3><a href="blog-details.html?title=${encodeURIComponent(a.title)}">${truncateText(a.title, 50)}</a></h3>
+                    <p class="news-description">${truncateText(a.short_description || a.content || '', 60)}</p>
+                    <ul class="post-info">
+                      <br/><br/>
+                      <li><strong>${formatDate(a.publishedAt)}</strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>`);
+        });
 
-  articles.forEach(a => {
-    const html = `
-      <article>
-        <a href="blog-details.html?title=${encodeURIComponent(a.title)}">
-          <img src="${a.urlToImage}" alt="${a.title}">
-        </a>
-        <div class="block-description">
-          <a href="blog-details.html?title=${encodeURIComponent(a.title)}">
-            <h5>${truncateText(a.title, 40)}</h5>
-          </a>
-          <span class="text-primary">${formatDate(a.publishedAt)}</span>
-        </div>
-      </article>
-    `;
-    $container.append(html);
-  });
-}
+        // Paginação (recriada, mas permanece no DOM da aba — não se perde ao alternar)
+        $pagination.empty();
 
+        const $left = $(`<li class="left-arrow"><a href="#"${page === 1 ? ' class="disabled"' : ''}><i class="icon-34"></i></a></li>`);
+        $left.off('click').on('click', (e) => { e.preventDefault(); if (page > 1) drawPage(page - 1); });
+        $pagination.append($left);
 
+        for (let i = 1; i <= total; i++) {
+          const $li = $(`<li><a href="#"${i === page ? ' class="current"' : ''}>${i}</a></li>`);
+          $li.off('click').on('click', (e) => { e.preventDefault(); drawPage(i); });
+          $pagination.append($li);
+        }
 
-  // Função para inserir 3 últimos posts
-  function insertLatestThreePosts(articles) {
-    const $container = $('#latest-tree-posts');
-    $container.empty();
+        const $right = $(`<li class="right-arrow"><a href="#"${page === total ? ' class="disabled"' : ''}><i class="icon-35"></i></a></li>`);
+        $right.off('click').on('click', (e) => { e.preventDefault(); if (page < total) drawPage(page + 1); });
+        $pagination.append($right);
+      }
 
-    articles.forEach(a => {
-      const html = `
-      <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-          <div class="inner-box">
-            <div class="image-box" style="max-height:410px; overflow:hidden;">
-              <figure class="image" style="width:100%; height:230px; object-fit:cover;">
+      // expõe o controller desta aba
+      tabControllers.set(paneId, {
+        get page() { return page; },
+        get total() { return total; },
+        show: (p, persist = false) => drawPage(p ?? page, persist),
+      });
+    }
+
+    // Alterna de aba sem destruir markup/paginação; re-renderiza a página atual
+    function setActiveTab(paneId, pushHistory = true) {
+      if (!paneId || !tabControllers.has(paneId)) paneId = 'todos';
+
+      // Botões
+      $('#pills-tab button.nav-link').removeClass('active').attr('aria-selected', 'false');
+      $(`#pills-tab button.nav-link[data-tab="${paneId}"]`).addClass('active').attr('aria-selected', 'true');
+
+      // Painéis (só esconder/mostrar)
+      $('#pills-tabContent .tab-pane').addClass('d-none');
+      const $pane = $(`#${paneId}`);
+      $pane.removeClass('d-none');
+
+      // Estado
+      state.activeTab = paneId;
+      const ctrl = tabControllers.get(paneId);
+      const desiredPage = clamp(state.pages[paneId] || ctrl.page || 1, 1, ctrl.total);
+
+      // Reapresenta a página atual daquela aba (sem reset)
+      ctrl.show(desiredPage, /*persist*/ false);
+
+      // Persistência (URL + sessionStorage)
+      saveState(pushHistory);
+    }
+
+    // Clicks nas tabs (UI principal)
+    function setupTabSwitching() {
+      $('#pills-tab').off('click', 'button.nav-link').on('click', 'button.nav-link', function () {
+        const selectedTab = String($(this).data('tab') || 'todos');
+        setActiveTab(selectedTab, /*pushHistory*/ true);
+      });
+    }
+
+    // Qualquer toggle externo que abra uma categoria específica:
+    // basta adicionar data-goto-tab="pane-X" no botão/link.
+    function setupExternalToggles() {
+      $(document).off('click', '[data-goto-tab]').on('click', '[data-goto-tab]', function (e) {
+        e.preventDefault();
+        const target = String($(this).data('goto-tab') || '');
+        if (target) setActiveTab(target, /*pushHistory*/ true);
+      });
+    }
+
+    // ---------- DETALHE (página blog-details) ----------
+    (function initDetails() {
+      const params = new URLSearchParams(window.location.search);
+      const titleParam = params.get('title') ? decodeURIComponent(params.get('title')) : null;
+
+      if (!titleParam) {
+        // estamos listagem (não é detalhe)
+        return;
+      }
+
+      $.get(url, function (response) {
+        if (response?.status !== 'ok') return;
+
+        const found = (response.articles || []).find(article => article.title === titleParam);
+        if (!found) {
+          $('.details-blog').html('<p>Notícia não encontrada.</p>');
+          return;
+        }
+
+        renderDetails(found);
+
+        const otherArticles = response.articles
+          .filter(a => a.title !== found.title && a.urlToImage)
+          .slice(0, 2);
+        renderMoreNews(otherArticles);
+      });
+
+      function renderMoreNews(articles) {
+        const $container = $('#more-news');
+        $container.empty();
+        articles.forEach(a => {
+          const html = `
+            <article>
+              <a href="blog-details.html?title=${encodeURIComponent(a.title)}">
+                <img src="${a.urlToImage}" alt="${a.title}">
+              </a>
+              <div class="block-description">
                 <a href="blog-details.html?title=${encodeURIComponent(a.title)}">
-                  <img class="blurhash-auto" src="${a.urlToImage}" alt="${a.title}" style="width:100%; height:auto; min-height:400px; max-height:410px; object-fit:cover;">
+                  <h5>${truncateText(a.title, 40)}</h5>
                 </a>
-              </figure>
-            </div>
+                <span class="text-primary">${formatDate(a.publishedAt)}</span>
+              </div>
+            </article>`;
+          $container.append(html);
+        });
+      }
+
+      function renderDetails(article) {
+        const formattedDate = formatDate(article.publishedAt);
+        const source = article.category || 'Notícia';
+        const title = article.title || '';
+        const image = article.urlToImage || '';
+
+        $('meta[property="og:title"]').attr("content", title);
+        $('meta[property="og:description"]').attr("content", article.description || '');
+        $('meta[property="og:image"]').attr("content", image);
+
+        const html = `
+          <div class="inner-box">
             <div class="lower-content">
-              <span class="category">${a.category || 'Notícia'}</span>
-              <h3><a href="blog-details.html?title=${encodeURIComponent(a.title)}">${truncateText(a.title, 45)}</a></h3>
-              <p>${truncateText(a.short_description || a.content || '', 60)}</p>
-              <br/> 
-               <ul class="post-info">
-                  <li><strong>${formatDate(a.publishedAt)}</strong></li>
-              </ul>
+              <span class="category">${source}</span>
+              <h3>${title}</h3>
+              <ul class="post-info"><li><span>${formattedDate}</span></li></ul>
             </div>
-          </div>
-        </div>
-      </div>
-    `;
-      $container.append(html);
-    });
-  }
+            <div class="text-box pt_25 mb_0">
+              <div class="mb_30">${article.description || ''}</div>
+              <br>
+            </div>
+          </div>`;
+        $('#details-blog').html(html);
+        if (typeof RemoveWhiteSpace === 'function') RemoveWhiteSpace();
+      }
+    })();
 
- 
-
-  function renderDetails(article) {
-  const formattedDate = new Date(article.publishedAt).toLocaleDateString('pt-BR', {
-    day: '2-digit', month: 'long', year: 'numeric'
-  });
-
-  const author = article.author || 'Redação';
-  const source = article.category || 'Notícia';
-  const title = article.title;
-  const image = article.urlToImage;
-  const description = article.description || '';
-  const content = article.content || '';
- 
-  $('meta[property="og:title"]').attr("content", title);
-  $('meta[property="og:description"]').attr("content", description);
-  $('meta[property="og:image"]').attr("content", image);
-
-    const html = `
-        <div class="inner-box">
-          <div class="lower-content">
-            <span class="category">${source}</span>
-            <h3>${title}</h3>
-            <ul class="post-info"> 
-              <li><span>${formattedDate}</span></li>
-            </ul>
-          </div> 
-          <div class="text-box pt_25 mb_0">
-            <div class="mb_30">${description}</div> 
-            <br> 
-          </div>
-        </div>`;
-
-    $('#details-blog').html(html);
-}
-
-
-
-
-  function truncateText(text, max) {
-    return text?.length > max ? text.slice(0, max) + '...' : text || '';
-  }
+    // ---------- Utils ----------
+    function truncateText(text, max) {
+      return text?.length > max ? text.slice(0, max) + '...' : (text || '');
+    }
+    function formatDate(dt) {
+      return new Date(dt).toLocaleDateString('pt-PT', {
+        day: '2-digit', month: 'long', year: 'numeric'
+      });
+    }
+    function clamp(n, min, max) {
+      return Math.max(min, Math.min(max, Number.isFinite(n) ? n : min));
+    }
   }, 1500);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
