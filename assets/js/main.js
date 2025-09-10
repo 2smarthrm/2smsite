@@ -2,7 +2,7 @@
 $(document).ready(function () {
   setTimeout(() => {
     const url = `https://2smartblog.vercel.app/api/blogs`;
-
+ 
     // ---------- STATE ----------
     // Estrutura de estado por aba: { activeTab: string, pages: { [paneId]: number } }
     const STATE_KEY = 'newsTabsState';
@@ -422,11 +422,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   let megaMenus = document.querySelectorAll(".mega-menu");
 
@@ -736,7 +731,7 @@ const translations = {
   "fr": `Témoignages récents`
 },
 "t41": {
-  "pt": `2Smart: simplifique o RH, <span>potencialize</span> as equipas`,
+  "pt": `Quêm <span>somos</span> ?`,
   "en": `2Smart: simplify HR, <span>empower</span> teams`,
   "es": `2Smart: simplifique RRHH, <span>potencie</span> los equipos`,
   "fr": `2Smart : simplifiez les RH, <span>renforcez</span> les équipes`
@@ -1022,7 +1017,7 @@ const translations = {
 
 /** Prices */
 "t85": {
-  "pt": "Gestão de Assiduidades e equipas desde <br><span class='price-box' >0,75€ / mês</span> por colaborador",
+  "pt": "Gestão de assiduidade e equipas desde <br><span class='price-box' >0,75€ / mês</span> por colaborador",
   "en": "Attendance and team management from <br><span class='price-box'>€0.75 / month</span> per employee",
   "es": "Gestión de asistencias y equipos desde <br><span>0,75€ / mes</span> por empleado",
   "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>0,75€ / mois</span> par collaborateur"
@@ -1134,96 +1129,12 @@ const translations = {
 };
 
 const imageTranslations = {
-  "img-1": {
+  "img-1333": {
     pt: "https://ik.imagekit.io/fsobpyaa5i/kiosso_image%20(1).png",
     en: "",
     es: "",
     fr: ""
-  },
-  "img-2": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2026.png ",
-    en: "https://ik.imagekit.io/fsobpyaa5i/img-1-ingles.png",
-    es: "https://ik.imagekit.io/fsobpyaa5i/img-1-espanhol.png",
-    fr: "https://ik.imagekit.io/fsobpyaa5i/img-1-frances.png"
-  },
-  "img-3": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2028.png",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-4": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030456.png",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-5": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030458%20(1).png",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-6": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%2010.png",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-7": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%203.png",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-8": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/iphone%20copy%209.png",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-9": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030465%20(2).png",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-10": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030464.png",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-11": {
-    pt: "https://ik.imagekit.io/fsobpyaa5i/Group%2030463%20(1).png",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-12": {
-    pt: " ",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-13": {
-    pt: " ",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-14": {
-    pt: " ",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
-  "img-15": {
-    pt: " ",
-    en: " ",
-    es: " ",
-    fr: " "
-  },
+  }, 
 };
 
 // --- FUNÇÃO PARA APLICAR TRADUÇÃO DE TEXTOS ---
@@ -1325,3 +1236,13 @@ if (menu) {
     });
 }
  
+
+ function RemoveWhiteSpace(){
+  let uls = document.querySelectorAll("#details-blog ul");
+  uls.forEach(ul => {
+      let lis =  ul.querySelectorAll("li");
+      lis.forEach(li => {
+         li.style.whiteSpace = "normal";
+      });
+  });
+ }
