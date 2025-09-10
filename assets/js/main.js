@@ -505,7 +505,7 @@ const translations = {
     "fr": "2Smart Logiciel de"
   },
   "t4": {
-    "pt": " gestão de assiduiades",
+    "pt": " gestão de assiduiade",
     "en": " Attendance ",
     "es": " gestión de asistencias",
     "fr": " gestion des présences"
