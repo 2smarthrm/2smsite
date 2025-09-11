@@ -12,7 +12,7 @@ $(document).ready(function () {
     // Util: ler/gravar estado
     function saveState(pushHistory = true) {
       try { sessionStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch (_) { }
-      // guarda em URL sem recarregar (facilita "voltar")
+      // guarda em URL sem recarregar (facilita "voltar") 
       if (pushHistory) {
         const urlObj = new URL(window.location.href);
         urlObj.searchParams.set('tab', state.activeTab);
@@ -640,18 +640,18 @@ const translations = {
     "es": `Integración Potente`,
     "fr": `Intégration Puissante`
   },
-  "t30": {
-    "pt": `Formações & Apresentações`,
-    "en": `Trainings & Presentations`,
-    "es": `Formaciones y Presentaciones`,
-    "fr": `Formations & Présentations`
-  },
-  "t31": {
-    "pt": `Eventos Recentes`,
-    "en": `Recent Events`,
-    "es": `Eventos Recientes`,
-    "fr": `Événements récents`
-  },
+"t30": {
+  "pt": "Novidades & Atualizações",
+  "en": "News & Updates",
+  "es": "Novedades y Actualizaciones",
+  "fr": "Nouveautés & Mises à jour"
+},
+"t31": {
+  "pt": "Últimas Atualizações",
+  "en": "Latest Updates",
+  "es": "Últimas Actualizaciones",
+  "fr": "Dernières Mises à jour"
+},
   "t32": {
     "pt": `  `,
     "en": ``,
@@ -709,7 +709,7 @@ const translations = {
     "fr": `Témoignages récents`
   },
   "t41": {
-    "pt": `Quêm <span>somos</span> ?`,
+    "pt": `Quem <span>somos</span> ?`,
     "en": `Who <span>are we</span>?`,
     "es": `¿Quiénes <span>somos</span>?`,
     "fr": `Qui <span>sommes-nous</span>?`
@@ -838,7 +838,7 @@ const translations = {
     "fr": `Événements récents`
   },
 
-  /** SL - Gestão de colaboradores */
+  /** SL - Gestão de Assiduidade */
   "t61": {
     "pt": `Soluções modernas para RH`,
     "en": `Modern solutions for HR`,
@@ -846,7 +846,7 @@ const translations = {
     "fr": `Solutions modernes pour les RH`
   },
   "t62": {
-    "pt": `Gestão de Colaboradores`,
+    "pt": `Gestão de Assiduidade`,
     "en": `Employee Management`,
     "es": `Gestión de Empleados`,
     "fr": `Gestion des Collaborateurs`
@@ -995,10 +995,10 @@ const translations = {
 
   /** Prices */
   "t85": {
-    "pt": "Gestão de assiduidade e equipas desde <br><span class='price-box' >0,75€ / mês</span> por colaborador",
-    "en": "Attendance and team management from <br><span class='price-box'>€0.75 / month</span> per employee",
-    "es": "Gestión de asistencias y equipos desde <br><span>0,75€ / mes</span> por empleado",
-    "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>0,75€ / mois</span> par collaborateur"
+    "pt": "Gestão de assiduidade e equipas desde <br><span class='price-box' >1€ / mês</span> por colaborador",
+    "en": "Attendance and team management from <br><span class='price-box'>1€ / month</span> per employee",
+    "es": "Gestión de asistencias y equipos desde <br><span>1€ / mes</span> por empleado",
+    "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>1€ / mois</span> par collaborateur"
   },
   "t86": {
     "pt": "Gestão Centralizada em Cloud com Terminais Integrados",
