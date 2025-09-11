@@ -3508,6 +3508,8 @@ body ol.mega-menu menu .app-image img{
 
  body .about-text-area .block-content-area img {
    border-radius: 10px;
+   min-height:600px;
+   object-fit: cover;
  }
 
 
@@ -3768,7 +3770,19 @@ body .service-details .service-header-image.sv6 {
  }
 
 
+ 
 
+body .service-details .service-header-image.sv7 {
+   background: url(" https://ik.imagekit.io/fsobpyaa5i/myravey-workshop-_%20(2).png");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain ;
+   background-color: rgb(242, 244, 252) ;
+ }
+
+
+
+ 
 
 
 
@@ -4032,4 +4046,15 @@ body .service-details .service-header-image.sv6 {
 
  body .price-box{
   font-weight: bold !important;
+ }
+
+ body .line-bar{
+    width:1px; 
+    min-height:20vh;
+    margin-right:20px;
+    background-color: rgb(236, 236, 236);
+ }
+
+ body .details-blog .inner-box .lower-content  li{
+     white-space:normal !important;
  }

@@ -2,7 +2,7 @@
 $(document).ready(function () {
   setTimeout(() => {
     const url = `https://2smartblog.vercel.app/api/blogs`;
- 
+
     // ---------- STATE ----------
     // Estrutura de estado por aba: { activeTab: string, pages: { [paneId]: number } }
     const STATE_KEY = 'newsTabsState';
@@ -11,7 +11,7 @@ $(document).ready(function () {
 
     // Util: ler/gravar estado
     function saveState(pushHistory = true) {
-      try { sessionStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch (_) {}
+      try { sessionStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch (_) { }
       // guarda em URL sem recarregar (facilita "voltar")
       if (pushHistory) {
         const urlObj = new URL(window.location.href);
@@ -365,6 +365,7 @@ $(document).ready(function () {
         const source = article.category || 'Notícia';
         const title = article.title || '';
         const image = article.urlToImage || '';
+        document.title = article.title + " - 2Smart HR";
 
         $('meta[property="og:title"]').attr("content", title);
         $('meta[property="og:description"]').attr("content", article.description || '');
@@ -401,26 +402,6 @@ $(document).ready(function () {
     }
   }, 1500);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   let megaMenus = document.querySelectorAll(".mega-menu");
@@ -466,9 +447,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-/*** Translator code */
-
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'pt',
@@ -505,7 +483,7 @@ const translations = {
     "fr": "2Smart Logiciel de"
   },
   "t4": {
-    "pt": " gestão de assiduidade",
+    "pt": " gestão de assiduiades",
     "en": " Attendance ",
     "es": " gestión de asistencias",
     "fr": " gestion des présences"
@@ -706,426 +684,440 @@ const translations = {
     "en": `2Smart HR`,
     "es": `2Smart HR`,
     "fr": `2Smart HR`
-  },"t37": {
-  "pt": ` A solução <span>definitiva</span> para sua <div class="underline"> empresa</div>`,
-  "en": ` The <span>definitive</span> solution for your <div class="underline">company</div>`,
-  "es": ` La solución <span>definitiva</span> para su <div class="underline">empresa</div>`,
-  "fr": ` La solution <span>définitive</span> pour votre <div class="underline">entreprise</div>`
-},
-"t38": {
-  "pt": ` +650 empresas e +30.800 colaboradores <br> usam o nosso software`,
-  "en": ` +650 companies and +30,800 employees <br> use our software`,
-  "es": ` +650 empresas y +30.800 empleados <br> utilizan nuestro software`,
-  "fr": ` +650 entreprises et +30.800 collaborateurs <br> utilisent notre logiciel`
-},
-"t39": {
-  "pt": `Testemunhos`,
-  "en": `Testimonials`,
-  "es": `Testimonios`,
-  "fr": `Témoignages`
-},
-"t40": {
-  "pt": `Testemunhos mais recentes`,
-  "en": `Latest testimonials`,
-  "es": `Testimonios más recientes`,
-  "fr": `Témoignages récents`
-},
-"t41": {
-  "pt": `Quêm <span>somos</span> ?`,
-  "en": `2Smart: simplify HR, <span>empower</span> teams`,
-  "es": `2Smart: simplifique RRHH, <span>potencie</span> los equipos`,
-  "fr": `2Smart : simplifiez les RH, <span>renforcez</span> les équipes`
-},
-"t42": {
-  "pt": `Formações & Apresentações`,
-  "en": `Trainings & Presentations`,
-  "es": `Formaciones y Presentaciones`,
-  "fr": `Formations & Présentations`
-},
-"t43": {
-  "pt": `Eventos Recentes`,
-  "en": `Recent Events`,
-  "es": `Eventos Recientes`,
-  "fr": `Événements récents`
-},
+  }, "t37": {
+    "pt": ` A solução <span>definitiva</span> para sua <div class="underline"> empresa</div>`,
+    "en": ` The <span>definitive</span> solution for your <div class="underline">company</div>`,
+    "es": ` La solución <span>definitiva</span> para su <div class="underline">empresa</div>`,
+    "fr": ` La solution <span>définitive</span> pour votre <div class="underline">entreprise</div>`
+  },
+  "t38": {
+    "pt": ` +650 empresas e +30.800 colaboradores <br> usam o nosso software`,
+    "en": ` +650 companies and +30,800 employees <br> use our software`,
+    "es": ` +650 empresas y +30.800 empleados <br> utilizan nuestro software`,
+    "fr": ` +650 entreprises et +30.800 collaborateurs <br> utilisent notre logiciel`
+  },
+  "t39": {
+    "pt": `Testemunhos`,
+    "en": `Testimonials`,
+    "es": `Testimonios`,
+    "fr": `Témoignages`
+  },
+  "t40": {
+    "pt": `Testemunhos mais recentes`,
+    "en": `Latest testimonials`,
+    "es": `Testimonios más recientes`,
+    "fr": `Témoignages récents`
+  },
+  "t41": {
+    "pt": `Quêm <span>somos</span> ?`,
+    "en": `Who <span>are we</span>?`,
+    "es": `¿Quiénes <span>somos</span>?`,
+    "fr": `Qui <span>sommes-nous</span>?`
+  },
+  "t42": {
+    "pt": `Formações & Apresentações`,
+    "en": `Trainings & Presentations`,
+    "es": `Formaciones y Presentaciones`,
+    "fr": `Formations & Présentations`
+  },
+  "t43": {
+    "pt": `Eventos Recentes`,
+    "en": `Recent Events`,
+    "es": `Eventos Recientes`,
+    "fr": `Événements récents`
+  },
 
-/*** SL - Aplicação  */
-"t44": {
-  "pt": `Gestão de horários e assiduidade na palma da  mão`,
-  "en": `Schedule and attendance management in the palm of your hand`,
-  "es": `Gestión de horarios y asistencia en la palma de tu mano`,
-  "fr": `Gestion des horaires et de l’assiduité au creux de votre main`
-},
-"t45": {
-  "pt": `Aplicação <span translate="no">2Smart</span>`,
-  "en": `<span translate="no">2Smart</span> App`,
-  "es": `Aplicación <span translate="no">2Smart</span>`,
-  "fr": `Application <span translate="no">2Smart</span>`
-},
-"t46": {
-  "pt": `Gestão de RH na palma da mão`,
-  "en": `HR management in the palm of your hand`,
-  "es": `Gestión de RRHH en la palma de tu mano`,
-  "fr": `Gestion des RH au creux de votre main`
-}, 
-"t47": {
-  "pt": `2Smart App para colaboradores`,
-  "en": `2Smart App for employees`,
-  "es": `App 2Smart para empleados`,
-  "fr": `Application 2Smart pour les collaborateurs`
-},
-"t48": {
-  "pt": `Mobilidade e Gestão   Inteligente`,
-  "en": `Mobility and Smart Management`,
-  "es": `Movilidad y Gestión Inteligente`,
-  "fr": `Mobilité et Gestion Intelligente`
-},
-"t49": {
-  "pt": `A App 2Smart em Tempo Real`,
-  "en": `The 2Smart App in Real Time`,
-  "es": `La App 2Smart en Tiempo Real`,
-  "fr": `L’application 2Smart en Temps Réel`
-},
+  /*** SL - Aplicação  */
+  "t44": {
+    "pt": `Gestão de horários e assiduidade na palma da  mão`,
+    "en": `Schedule and attendance management in the palm of your hand`,
+    "es": `Gestión de horarios y asistencia en la palma de tu mano`,
+    "fr": `Gestion des horaires et de l’assiduité au creux de votre main`
+  },
+  "t45": {
+    "pt": `Aplicação <span translate="no">2Smart</span>`,
+    "en": `<span translate="no">2Smart</span> App`,
+    "es": `Aplicación <span translate="no">2Smart</span>`,
+    "fr": `Application <span translate="no">2Smart</span>`
+  },
+  "t46": {
+    "pt": `Gestão de RH na palma da mão`,
+    "en": `HR management in the palm of your hand`,
+    "es": `Gestión de RRHH en la palma de tu mano`,
+    "fr": `Gestion des RH au creux de votre main`
+  },
+  "t47": {
+    "pt": `2Smart App para colaboradores`,
+    "en": `2Smart App for employees`,
+    "es": `App 2Smart para empleados`,
+    "fr": `Application 2Smart pour les collaborateurs`
+  },
+  "t48": {
+    "pt": `Mobilidade e Gestão   Inteligente`,
+    "en": `Mobility and Smart Management`,
+    "es": `Movilidad y Gestión Inteligente`,
+    "fr": `Mobilité et Gestion Intelligente`
+  },
+  "t49": {
+    "pt": `A App 2Smart em Tempo Real`,
+    "en": `The 2Smart App in Real Time`,
+    "es": `La App 2Smart en Tiempo Real`,
+    "fr": `L’application 2Smart en Temps Réel`
+  },
 
 
 
-/** Blogue */
+  /** Blogue */
 
-"t50": {
-  "pt": `Acompanhe as inovações e resultados que transformam a gestão de pessoas`,
-  "en": `Follow the innovations and results that are transforming people management`,
-  "es": `Siga las innovaciones y resultados que están transformando la gestión de personas`,
-  "fr": `Suivez les innovations et les résultats qui transforment la gestion des personnes`
-},
+  "t50": {
+    "pt": `Acompanhe as inovações e resultados que transformam a gestão de pessoas`,
+    "en": `Follow the innovations and results that are transforming people management`,
+    "es": `Siga las innovaciones y resultados que están transformando la gestión de personas`,
+    "fr": `Suivez les innovations et les résultats qui transforment la gestion des personnes`
+  },
 
-/** Pagina de contctos */
- "t51": {
-  "pt": `Contacte-nos`,
-  "en": `Contact us`,
-  "es": `Contáctenos`,
-  "fr": `Contactez-nous`
-},
-"t52": {
-  "pt": ` 2Smart HR - Power to You!`,
-  "en": ` 2Smart HR - Power to You!`,
-  "es": ` 2Smart HR - ¡Poder para ti!`,
-  "fr": ` 2Smart HR - Le pouvoir est à vous !`
-},
-"t53": {
-  "pt": `informação geral`,
-  "en": `general information`,
-  "es": `información general`,
-  "fr": `informations générales`
-},
-"t54": {
-  "pt": `suporte técnico`,
-  "en": `technical support`,
-  "es": `soporte técnico`,
-  "fr": `support technique`
-},
-"t55": {
-  "pt": ` +650 empresas e +30.800 colaboradores <br> usam o nosso software`,
-  "en": ` +650 companies and +30,800 employees <br> use our software`,
-  "es": ` +650 empresas y +30.800 empleados <br> utilizan nuestro software`,
-  "fr": ` +650 entreprises et +30.800 collaborateurs <br> utilisent notre logiciel`
-},
-"t56": {
-  "pt": `Localizações`,
-  "en": `Locations`,
-  "es": `Ubicaciones`,
-  "fr": `Localisations`
-},
-"t57": {
-  "pt": `Saiba onde estamos localizados`,
-  "en": `Find out where we are located`,
-  "es": `Descubra dónde estamos ubicados`,
-  "fr": `Découvrez où nous sommes situés`
-},
-"t58": {
-  "pt": `locais diferentes mas com o mesmo objectivo`,
-  "en": `different places but with the same goal`,
-  "es": `lugares diferentes pero con el mismo objetivo`,
-  "fr": `lieux différents mais avec le même objectif`
-},
-"t59": {
-  "pt": `Formações & Apresentações`,
-  "en": `Trainings & Presentations`,
-  "es": `Formaciones y Presentaciones`,
-  "fr": `Formations & Présentations`
-},
-"t60": {
-  "pt": `Eventos Recentes`,
-  "en": `Recent Events`,
-  "es": `Eventos Recientes`,
-  "fr": `Événements récents`
-},
+  /** Pagina de contctos */
+  "t51": {
+    "pt": `Contacte-nos`,
+    "en": `Contact us`,
+    "es": `Contáctenos`,
+    "fr": `Contactez-nous`
+  },
+  "t52": {
+    "pt": ` 2Smart HR - Power to You!`,
+    "en": ` 2Smart HR - Power to You!`,
+    "es": ` 2Smart HR - ¡Poder para ti!`,
+    "fr": ` 2Smart HR - Le pouvoir est à vous !`
+  },
+  "t53": {
+    "pt": `informação geral`,
+    "en": `general information`,
+    "es": `información general`,
+    "fr": `informations générales`
+  },
+  "t54": {
+    "pt": `suporte técnico`,
+    "en": `technical support`,
+    "es": `soporte técnico`,
+    "fr": `support technique`
+  },
+  "t55": {
+    "pt": ` +650 empresas e +30.800 colaboradores <br> usam o nosso software`,
+    "en": ` +650 companies and +30,800 employees <br> use our software`,
+    "es": ` +650 empresas y +30.800 empleados <br> utilizan nuestro software`,
+    "fr": ` +650 entreprises et +30.800 collaborateurs <br> utilisent notre logiciel`
+  },
+  "t56": {
+    "pt": `Localizações`,
+    "en": `Locations`,
+    "es": `Ubicaciones`,
+    "fr": `Localisations`
+  },
+  "t57": {
+    "pt": `Saiba onde estamos localizados`,
+    "en": `Find out where we are located`,
+    "es": `Descubra dónde estamos ubicados`,
+    "fr": `Découvrez où nous sommes situés`
+  },
+  "t58": {
+    "pt": `locais diferentes mas com o mesmo objectivo`,
+    "en": `different places but with the same goal`,
+    "es": `lugares diferentes pero con el mismo objetivo`,
+    "fr": `lieux différents mais avec le même objectif`
+  },
+  "t59": {
+    "pt": `Formações & Apresentações`,
+    "en": `Trainings & Presentations`,
+    "es": `Formaciones y Presentaciones`,
+    "fr": `Formations & Présentations`
+  },
+  "t60": {
+    "pt": `Eventos Recentes`,
+    "en": `Recent Events`,
+    "es": `Eventos Recientes`,
+    "fr": `Événements récents`
+  },
 
-/** SL - Gestão de colaboradores */
-"t61": {
-  "pt": `Soluções modernas para RH`,
-  "en": `Modern solutions for HR`,
-  "es": `Soluciones modernas para RRHH`,
-  "fr": `Solutions modernes pour les RH`
-},
-"t62": {
-  "pt": `Gestão de Colaboradores`,
-  "en": `Employee Management`,
-  "es": `Gestión de Empleados`,
-  "fr": `Gestion des Collaborateurs`
-},
-"t63": {
-  "pt": `Acesso Rápido e   Autónomo`,
-  "en": `Fast and Autonomous Access`,
-  "es": `Acceso Rápido y Autónomo`,
-  "fr": `Accès Rapide et Autonome`
-},
-"t64": {
-  "pt": `Gestão em Tempo Real`,
-  "en": `Real-Time Management`,
-  "es": `Gestión en Tiempo Real`,
-  "fr": `Gestion en Temps Réel`
-},
-"t65": {
-  "pt": `Férias Pendentes, Faltas por Classificar e Localização`,
-  "en": `Pending Vacations, Unclassified Absences and Location`,
-  "es": `Vacaciones Pendientes, Ausencias por Clasificar y Localización`,
-  "fr": `Congés en Attente, Absences à Classer et Localisation`
-},
+  /** SL - Gestão de colaboradores */
+  "t61": {
+    "pt": `Soluções modernas para RH`,
+    "en": `Modern solutions for HR`,
+    "es": `Soluciones modernas para RRHH`,
+    "fr": `Solutions modernes pour les RH`
+  },
+  "t62": {
+    "pt": `Gestão de Colaboradores`,
+    "en": `Employee Management`,
+    "es": `Gestión de Empleados`,
+    "fr": `Gestion des Collaborateurs`
+  },
+  "t63": {
+    "pt": `Acesso Rápido e   Autónomo`,
+    "en": `Fast and Autonomous Access`,
+    "es": `Acceso Rápido y Autónomo`,
+    "fr": `Accès Rapide et Autonome`
+  },
+  "t64": {
+    "pt": `Gestão em Tempo Real`,
+    "en": `Real-Time Management`,
+    "es": `Gestión en Tiempo Real`,
+    "fr": `Gestion en Temps Réel`
+  },
+  "t65": {
+    "pt": `Férias Pendentes, Faltas por Classificar e Localização`,
+    "en": `Pending Vacations, Unclassified Absences and Location`,
+    "es": `Vacaciones Pendientes, Ausencias por Clasificar y Localización`,
+    "fr": `Congés en Attente, Absences à Classer et Localisation`
+  },
 
-/** SL -  ERP */
-"t66": {
-  "pt": `Gestão de assiduidade, horários e integração ERP simplificada`,
-  "en": `Attendance, schedule management and simplified ERP integration`,
-  "es": `Gestión de asistencia, horarios e integración ERP simplificada`,
-  "fr": `Gestion de l’assiduité, des horaires et intégration ERP simplifiée`
-},
-"t67": {
-  "pt": `Exportação ERP`,
-  "en": `ERP Export`,
-  "es": `Exportación ERP`,
-  "fr": `Exportation ERP`
-},
-"t68": {
-  "pt": `Exportação ERP automatizada`,
-  "en": `Automated ERP Export`,
-  "es": `Exportación ERP automatizada`,
-  "fr": `Exportation ERP automatisée`
-},
-"t69": {
-  "pt": `2Smart SaaS: RH e Assiduidade  Integrados`,
-  "en": `2Smart SaaS: Integrated HR and Attendance`,
-  "es": `2Smart SaaS: RRHH y Asistencia Integrados`,
-  "fr": `2Smart SaaS : RH et Assiduité Intégrés`
-},
-"t70": {
-  "pt": `Exportação ERP e Gestão  Inteligente`,
-  "en": `ERP Export and Smart Management`,
-  "es": `Exportación ERP y Gestión Inteligente`,
-  "fr": `Exportation ERP et Gestion Intelligente`
-},
-"t71": {
-  "pt": `2Smart SaaS em Tempo Real`,
-  "en": `2Smart SaaS in Real Time`,
-  "es": `2Smart SaaS en Tiempo Real`,
-  "fr": `2Smart SaaS en Temps Réel`
-},
+  /** SL -  ERP */
+  "t66": {
+    "pt": `Gestão de assiduidade, horários e integração ERP simplificada`,
+    "en": `Attendance, schedule management and simplified ERP integration`,
+    "es": `Gestión de asistencia, horarios e integración ERP simplificada`,
+    "fr": `Gestion de l’assiduité, des horaires et intégration ERP simplifiée`
+  },
+  "t67": {
+    "pt": `Exportação ERP`,
+    "en": `ERP Export`,
+    "es": `Exportación ERP`,
+    "fr": `Exportation ERP`
+  },
+  "t68": {
+    "pt": `Exportação ERP automatizada`,
+    "en": `Automated ERP Export`,
+    "es": `Exportación ERP automatizada`,
+    "fr": `Exportation ERP automatisée`
+  },
+  "t69": {
+    "pt": `2Smart SaaS: RH e Assiduidade  Integrados`,
+    "en": `2Smart SaaS: Integrated HR and Attendance`,
+    "es": `2Smart SaaS: RRHH y Asistencia Integrados`,
+    "fr": `2Smart SaaS : RH et Assiduité Intégrés`
+  },
+  "t70": {
+    "pt": `Exportação ERP e Gestão  Inteligente`,
+    "en": `ERP Export and Smart Management`,
+    "es": `Exportación ERP y Gestión Inteligente`,
+    "fr": `Exportation ERP et Gestion Intelligente`
+  },
+  "t71": {
+    "pt": `2Smart SaaS em Tempo Real`,
+    "en": `2Smart SaaS in Real Time`,
+    "es": `2Smart SaaS en Tiempo Real`,
+    "fr": `2Smart SaaS en Temps Réel`
+  },
 
-/** SL - Geofencing */
+  /** SL - Geofencing */
 
-"t72": {
-  "pt": "Tecnologia inteligente ao serviço das equipas",
-  "en": "Smart technology at the service of teams",
-  "es": "Tecnología inteligente al servicio de los equipos",
-  "fr": "Technologie intelligente au service des équipes"
-}, 
-"t73": {
-  "pt": "Geofencing e Geolocalização",
-  "en": "Geofencing and Geolocation",
-  "es": "Geofencing y Geolocalización",
-  "fr": "Géorepérage et géolocalisation"
-},
-"t74": {
-  "pt": "Presença Inteligente",
-  "en": "Smart Presence",
-  "es": "Presencia Inteligente",
-  "fr": "Présence Intelligente"
-},
-"t75": {
-  "pt": "Geofencing na Gestão de Equipas",
-  "en": "Geofencing in Team Management",
-  "es": "Geofencing en la Gestión de Equipos",
-  "fr": "Géorepérage dans la Gestion des Équipes"
-},
-"t76": {
-  "pt": "Tecnologia Aplicada à Mobilidade",
-  "en": "Technology Applied to Mobility",
-  "es": "Tecnología Aplicada a la Movilidad",
-  "fr": "Technologie Appliquée à la Mobilité"
-},
-"t77": {
-  "pt": "Controlo de Localização em Tempo Real",
-  "en": "Real-Time Location Tracking",
-  "es": "Control de Ubicación en Tiempo Real",
-  "fr": "Contrôle de Localisation en Temps Réel"
-},
+  "t72": {
+    "pt": "Tecnologia inteligente ao serviço das equipas",
+    "en": "Smart technology at the service of teams",
+    "es": "Tecnología inteligente al servicio de los equipos",
+    "fr": "Technologie intelligente au service des équipes"
+  },
+  "t73": {
+    "pt": "Geofencing e Geolocalização",
+    "en": "Geofencing and Geolocation",
+    "es": "Geofencing y Geolocalización",
+    "fr": "Géorepérage et géolocalisation"
+  },
+  "t74": {
+    "pt": "Presença Inteligente",
+    "en": "Smart Presence",
+    "es": "Presencia Inteligente",
+    "fr": "Présence Intelligente"
+  },
+  "t75": {
+    "pt": "Geofencing na Gestão de Equipas",
+    "en": "Geofencing in Team Management",
+    "es": "Geofencing en la Gestión de Equipos",
+    "fr": "Géorepérage dans la Gestion des Équipes"
+  },
+  "t76": {
+    "pt": "Tecnologia Aplicada à Mobilidade",
+    "en": "Technology Applied to Mobility",
+    "es": "Tecnología Aplicada a la Movilidad",
+    "fr": "Technologie Appliquée à la Mobilité"
+  },
+  "t77": {
+    "pt": "Controlo de Localização em Tempo Real",
+    "en": "Real-Time Location Tracking",
+    "es": "Control de Ubicación en Tiempo Real",
+    "fr": "Contrôle de Localisation en Temps Réel"
+  },
 
 
   /** SL - Planning and workflow  */
- 
-"t78": {
-  "pt": "Tecnologia inteligente ao serviço das equipas",
-  "en": "Smart technology at the service of teams",
-  "es": "Tecnología inteligente al servicio de los equipos",
-  "fr": "Technologie intelligente au service des équipes"
-},
-"t79": {
-  "pt": "Planificação e Workflow",
-  "en": "Planning and Workflow",
-  "es": "Planificación y Flujo de Trabajo",
-  "fr": "Planification et Flux de Travail"
-},
-"t80": {
-  "pt": "Planeamento Inteligente",
-  "en": "Smart Planning",
-  "es": "Planificación Inteligente",
-  "fr": "Planification Intelligente"
-},
-"t81": {
-  "pt": "Mapas e Horários de Trabalho",
-  "en": "Work Maps and Schedules",
-  "es": "Mapas y Horarios de Trabajo",
-  "fr": "Cartes et Horaires de Travail"
-},
-"t82": {
-  "pt": "Organização Estrutural",
-  "en": "Structural Organization",
-  "es": "Organización Estructural",
-  "fr": "Organisation Structurelle"
-},
-"t83": {
-  "pt": "Gestão de Equipa Facilitada",
-  "en": "Simplified Team Management",
-  "es": "Gestión de Equipo Facilitada",
-  "fr": "Gestion d'Équipe Facilitée"
-},
-"t84": {
-  "pt": "Mapas de Férias e Workflow",
-  "en": "Holiday Maps and Workflow",
-  "es": "Mapas de Vacaciones y Flujo de Trabajo",
-  "fr": "Cartes de Vacances et Flux de Travail"
-},
 
-/** Prices */
-"t85": {
-  "pt": "Gestão de assiduidade e equipas desde <br><span class='price-box' >0,75€ / mês</span> por colaborador",
-  "en": "Attendance and team management from <br><span class='price-box'>€0.75 / month</span> per employee",
-  "es": "Gestión de asistencias y equipos desde <br><span>0,75€ / mes</span> por empleado",
-  "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>0,75€ / mois</span> par collaborateur"
-},
-"t86": {
-  "pt": "Gestão Centralizada em Cloud com Terminais Integrados",
-  "en": "Centralized Cloud Management with Integrated Terminals",
-  "es": "Gestión Centralizada en la Nube con Terminales Integrados",
-  "fr": "Gestion Centralisée dans le Cloud avec Terminaux Intégrés"
-},
-"t87": {
-  "pt": "Tudo o que precisa para gerir <br> a sua força de trabalho",
-  "en": "Everything you need to manage <br> your workforce",
-  "es": "Todo lo que necesita para gestionar <br> su fuerza laboral",
-  "fr": "Tout ce dont vous avez besoin pour gérer <br> votre main-d'œuvre"
-},
-"t88": {
-  "pt": "Gestão completa de assiduidade e equipas, colaborador a colaborador",
-  "en": "Complete attendance and team management, employee by employee",
-  "es": "Gestión completa de asistencia y equipos, empleado por empleado",
-  "fr": "Gestion complète des présences et des équipes, collaborateur par collaborateur"
-},
-"t89": {
-  "pt": "Dados em tempo real para decisões mais inteligentes",
-  "en": "Real-time data for smarter decisions",
-  "es": "Datos en tiempo real para decisiones más inteligentes",
-  "fr": "Données en temps réel pour des décisions plus intelligentes"
-},
-"t90": {
-  "pt": "Automatize processos de RH com fluxos personalizados",
-  "en": "Automate HR processes with customized workflows",
-  "es": "Automatice procesos de RRHH con flujos personalizados",
-  "fr": "Automatisez les processus RH avec des flux personnalisés"
-},
-"t91": {
-  "pt": "Registo de ponto digital, físico ou mobile — adaptado ao seu contexto",
-  "en": "Digital, physical, or mobile time tracking — adapted to your context",
-  "es": "Registro de horario digital, físico o móvil — adaptado a su contexto",
-  "fr": "Enregistrement du temps digital, physique ou mobile — adapté à votre contexte"
-},
+  "t78": {
+    "pt": "Tecnologia inteligente ao serviço das equipas",
+    "en": "Smart technology at the service of teams",
+    "es": "Tecnología inteligente al servicio de los equipos",
+    "fr": "Technologie intelligente au service des équipes"
+  },
+  "t79": {
+    "pt": "Planificação e Workflow",
+    "en": "Planning and Workflow",
+    "es": "Planificación y Flujo de Trabajo",
+    "fr": "Planification et Flux de Travail"
+  },
+  "t80": {
+    "pt": "Planeamento Inteligente",
+    "en": "Smart Planning",
+    "es": "Planificación Inteligente",
+    "fr": "Planification Intelligente"
+  },
+  "t81": {
+    "pt": "Mapas e Horários de Trabalho",
+    "en": "Work Maps and Schedules",
+    "es": "Mapas y Horarios de Trabajo",
+    "fr": "Cartes et Horaires de Travail"
+  },
+  "t82": {
+    "pt": "Organização Estrutural",
+    "en": "Structural Organization",
+    "es": "Organización Estructural",
+    "fr": "Organisation Structurelle"
+  },
+  "t83": {
+    "pt": "Gestão de Equipa Facilitada",
+    "en": "Simplified Team Management",
+    "es": "Gestión de Equipo Facilitada",
+    "fr": "Gestion d'Équipe Facilitée"
+  },
+  "t84": {
+    "pt": "Mapas de Férias e Workflow",
+    "en": "Holiday Maps and Workflow",
+    "es": "Mapas de Vacaciones y Flujo de Trabajo",
+    "fr": "Cartes de Vacances et Flux de Travail"
+  },
 
-
-/** SL - reports and analitycs */
-
-"t92": {
-  "pt": "Tecnologia inteligente ao serviço das equipas",
-  "en": "Smart technology at the service of teams",
-  "es": "Tecnología inteligente al servicio de los equipos",
-  "fr": "Technologie intelligente au service des équipes"
-},
-"t93": {
-  "pt": "Relatórios e Análises",
-  "en": "Reports and Analysis",
-  "es": "Informes y Análisis",
-  "fr": "Rapports et Analyses"
-},
-"t94": {
-  "pt": "Análise Inteligente de Dados",
-  "en": "Smart Data Analysis",
-  "es": "Análisis Inteligente de Datos",
-  "fr": "Analyse Intelligente des Données"
-},
-"t95": {
-  "pt": "Relatórios de Colaboradores e Operações",
-  "en": "Employee and Operations Reports",
-  "es": "Informes de Empleados y Operaciones",
-  "fr": "Rapports sur les Collaborateurs et les Opérations"
-},
-"t96": {
-  "pt": "Gestão de Recursos Facilitada",
-  "en": "Simplified Resource Management",
-  "es": "Gestión de Recursos Facilitada",
-  "fr": "Gestion des Ressources Facilitée"
-},
-"t97": {
-  "pt": "Relatórios de Férias, Baixas e Ausências",
-  "en": "Reports on Holidays, Sick Leave, and Absences",
-  "es": "Informes de Vacaciones, Bajas y Ausencias",
-  "fr": "Rapports sur les Congés, Arrêts et Absences"
-},
+  /** Prices */
+  "t85": {
+    "pt": "Gestão de assiduidade e equipas desde <br><span class='price-box' >0,75€ / mês</span> por colaborador",
+    "en": "Attendance and team management from <br><span class='price-box'>€0.75 / month</span> per employee",
+    "es": "Gestión de asistencias y equipos desde <br><span>0,75€ / mes</span> por empleado",
+    "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>0,75€ / mois</span> par collaborateur"
+  },
+  "t86": {
+    "pt": "Gestão Centralizada em Cloud com Terminais Integrados",
+    "en": "Centralized Cloud Management with Integrated Terminals",
+    "es": "Gestión Centralizada en la Nube con Terminales Integrados",
+    "fr": "Gestion Centralisée dans le Cloud avec Terminaux Intégrés"
+  },
+  "t87": {
+    "pt": "Tudo o que precisa para gerir <br> a sua força de trabalho",
+    "en": "Everything you need to manage <br> your workforce",
+    "es": "Todo lo que necesita para gestionar <br> su fuerza laboral",
+    "fr": "Tout ce dont vous avez besoin pour gérer <br> votre main-d'œuvre"
+  },
+  "t88": {
+    "pt": "Gestão completa de assiduidade e equipas, colaborador a colaborador",
+    "en": "Complete attendance and team management, employee by employee",
+    "es": "Gestión completa de asistencia y equipos, empleado por empleado",
+    "fr": "Gestion complète des présences et des équipes, collaborateur par collaborateur"
+  },
+  "t89": {
+    "pt": "Dados em tempo real para decisões mais inteligentes",
+    "en": "Real-time data for smarter decisions",
+    "es": "Datos en tiempo real para decisiones más inteligentes",
+    "fr": "Données en temps réel pour des décisions plus intelligentes"
+  },
+  "t90": {
+    "pt": "Automatize processos de RH com fluxos personalizados",
+    "en": "Automate HR processes with customized workflows",
+    "es": "Automatice procesos de RRHH con flujos personalizados",
+    "fr": "Automatisez les processus RH avec des flux personnalisés"
+  },
+  "t91": {
+    "pt": "Registo de ponto digital, físico ou mobile — adaptado ao seu contexto",
+    "en": "Digital, physical, or mobile time tracking — adapted to your context",
+    "es": "Registro de horario digital, físico o móvil — adaptado a su contexto",
+    "fr": "Enregistrement du temps digital, physique ou mobile — adapté à votre contexte"
+  },
 
 
+  /** SL - reports and analitycs */
 
-
-   "t98": {
+  "t92": {
+    "pt": "Tecnologia inteligente ao serviço das equipas",
+    "en": "Smart technology at the service of teams",
+    "es": "Tecnología inteligente al servicio de los equipos",
+    "fr": "Technologie intelligente au service des équipes"
+  },
+  "t93": {
+    "pt": "Relatórios e Análises",
+    "en": "Reports and Analysis",
+    "es": "Informes y Análisis",
+    "fr": "Rapports et Analyses"
+  },
+  "t94": {
+    "pt": "Análise Inteligente de Dados",
+    "en": "Smart Data Analysis",
+    "es": "Análisis Inteligente de Datos",
+    "fr": "Analyse Intelligente des Données"
+  },
+  "t95": {
+    "pt": "Relatórios de Colaboradores e Operações",
+    "en": "Employee and Operations Reports",
+    "es": "Informes de Empleados y Operaciones",
+    "fr": "Rapports sur les Collaborateurs et les Opérations"
+  },
+  "t96": {
+    "pt": "Gestão de Recursos Facilitada",
+    "en": "Simplified Resource Management",
+    "es": "Gestión de Recursos Facilitada",
+    "fr": "Gestion des Ressources Facilitée"
+  },
+  "t97": {
+    "pt": "Relatórios de Férias, Baixas e Ausências",
+    "en": "Reports on Holidays, Sick Leave, and Absences",
+    "es": "Informes de Vacaciones, Bajas y Ausencias",
+    "fr": "Rapports sur les Congés, Arrêts et Absences"
+  },
+  "t98": {
+    "pt": `Organização simples e eficiente de ausências`,
+    "en": `Simple and efficient absence management`,
+    "es": `Organización simple y eficiente de ausencias`,
+    "fr": `Organisation simple et efficace des absences`
+  },
+  "t99": {
+    "pt": `Gestão de Férias e Faltas`,
+    "en": `Vacation and Absence Management`,
+    "es": `Gestión de Vacaciones y Ausencias`,
+    "fr": `Gestion des Congés et Absences`
+  },
+  "t100": {
+    "pt": `Software de Gestão de Assiduidade`,
+    "en": `Attendance Management Software`,
+    "es": `Software de Gestión de Asistencia`,
+    "fr": `Logiciel de Gestion des Présences`
+  },
+  "t101": {
+    "pt": `Gestão de Férias com o 2Smart`,
+    "en": `Vacation Management with 2Smart`,
+    "es": `Gestión de Vacaciones con 2Smart`,
+    "fr": `Gestion des Congés avec 2Smart`
+  },
+  "t102": {
+    "pt": `Mobilidade & Transparência`,
+    "en": `Mobility & Transparency`,
+    "es": `Movilidad y Transparencia`,
+    "fr": `Mobilité & Transparence`
+  },
+  "t103": {
+    "pt": `Gestão de Faltas com o 2Smart`,
+    "en": `Absence Management with 2Smart`,
+    "es": `Gestión de Faltas con 2Smart`,
+    "fr": `Gestion des Absences avec 2Smart`
+  },
+  "t104": {
     "pt": `  `,
     "en": ``,
     "es": ``,
     "fr": ``
   },
-   "t99": {
-    "pt": `  `,
-    "en": ``,
-    "es": ``,
-    "fr": ``
-  },
-   "t100": {
-    "pt": `  `,
-    "en": ``,
-    "es": ``,
-    "fr": ``
-  },
-   "t101": {
-    "pt": `  `,
-    "en": ``,
-    "es": ``,
-    "fr": ``
-  }, 
 };
 
 const imageTranslations = {
@@ -1134,7 +1126,7 @@ const imageTranslations = {
     en: "",
     es: "",
     fr: ""
-  }, 
+  },
 };
 
 // --- FUNÇÃO PARA APLICAR TRADUÇÃO DE TEXTOS ---
@@ -1149,10 +1141,10 @@ function applyCustomTranslations(lang) {
 
 // --- FUNÇÃO PARA TROCAR IMAGENS ---
 function applyImageTranslations(lang) {
-  Object.keys(imageTranslations).forEach(key => {  
+  Object.keys(imageTranslations).forEach(key => {
     const el = document.getElementById(key);
     if (el && imageTranslations[key][lang]) {
-      el.src = imageTranslations[key][lang]; 
+      el.src = imageTranslations[key][lang];
     }
   });
 }
@@ -1225,24 +1217,24 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- MENU MOBILE (se existir) ---
 let menu = document.querySelector(".mg-menu");
 if (menu) {
-    let toggle = document.querySelectorAll(".toggle-services-menu");
-    toggle.forEach(btn => {
-        btn.addEventListener("click", () => {
-            console.clear()
-            document.querySelectorAll(".mg-menu").forEach(element => {
-                element.classList.toggle("show");
-            });
-        });
+  let toggle = document.querySelectorAll(".toggle-services-menu");
+  toggle.forEach(btn => {
+    btn.addEventListener("click", () => {
+      console.clear()
+      document.querySelectorAll(".mg-menu").forEach(element => {
+        element.classList.toggle("show");
+      });
     });
+  });
 }
- 
 
- function RemoveWhiteSpace(){
+
+function RemoveWhiteSpace() {
   let uls = document.querySelectorAll("#details-blog ul");
   uls.forEach(ul => {
-      let lis =  ul.querySelectorAll("li");
-      lis.forEach(li => {
-         li.style.whiteSpace = "normal";
-      });
+    let lis = ul.querySelectorAll("li");
+    lis.forEach(li => {
+      li.style.whiteSpace = "normal";
+    });
   });
- }
+}
