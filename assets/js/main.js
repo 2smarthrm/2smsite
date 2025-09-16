@@ -1118,6 +1118,52 @@ const translations = {
     "es": ``,
     "fr": ``
   },
+"t105": {
+  "pt": "Organização simples e eficiente",
+  "en": "Simple and efficient organization",
+  "es": "Organización simple y eficiente",
+  "fr": "Organisation simple et efficace"
+},
+"t106": {
+  "pt": "Terminais biométricos",
+  "en": "Biometric terminals",
+  "es": "Terminales biométricos",
+  "fr": "Terminaux biométriques"
+},
+"t107": {
+  "pt": "Integração com Terminais de Ponto",
+  "en": "Integration with Time Terminals",
+  "es": "Integración con terminales de control horario",
+  "fr": "Intégration avec les terminaux de pointage"
+},
+"t108": {
+  "pt": "Ponto ligado ao negócio",
+  "en": "Time tracking connected to your business",
+  "es": "Control horario conectado a tu negocio",
+  "fr": "Pointage connecté à votre entreprise"
+},
+"t109": {
+  "pt": "Hardware que fala com o 2Smart HR",
+  "en": "Hardware that communicates with 2Smart HR",
+  "es": "Hardware que se comunica con 2Smart HR",
+  "fr": "Matériel qui communique avec 2Smart HR"
+},
+"t110": {
+  "pt": "Mobilidade e transparência",
+  "en": "Mobility and transparency",
+  "es": "Movilidad y transparencia",
+  "fr": "Mobilité et transparence"
+}
+
+
+
+
+
+
+ 
+
+
+
 };
 
 const imageTranslations = {
