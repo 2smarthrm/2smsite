@@ -586,12 +586,12 @@ const translations = {
     "es": `Sectores`,
     "fr": `Secteurs`
   },
-  "t21": {
-    "pt": ` Setores Atendidos`,
-    "en": `Served Sectors`,
-    "es": `Sectores Atendidos`,
-    "fr": `Secteurs desservis`
-  },
+"t21": {
+  "pt": `Setores servidos`,
+  "en": `Sectors served`,
+  "es": `Sectores atendidos`,
+  "fr": `Secteurs desservis`
+},
   "t22": {
     "pt": ` Workflow  `,
     "en": `Workflow`,
