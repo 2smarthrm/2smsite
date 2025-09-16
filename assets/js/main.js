@@ -640,18 +640,18 @@ const translations = {
     "es": `Integración Potente`,
     "fr": `Intégration Puissante`
   },
-"t30": {
-  "pt": "Novidades & Atualizações",
-  "en": "News & Updates",
-  "es": "Novedades y Actualizaciones",
-  "fr": "Nouveautés & Mises à jour"
-},
-"t31": {
-  "pt": "Últimas Atualizações",
-  "en": "Latest Updates",
-  "es": "Últimas Actualizaciones",
-  "fr": "Dernières Mises à jour"
-},
+  "t30": {
+    "pt": "Novidades & Atualizações",
+    "en": "News & Updates",
+    "es": "Novedades y Actualizaciones",
+    "fr": "Nouveautés & Mises à jour"
+  },
+  "t31": {
+    "pt": "Últimas Atualizações",
+    "en": "Latest Updates",
+    "es": "Últimas Actualizaciones",
+    "fr": "Dernières Mises à jour"
+  },
   "t32": {
     "pt": `  `,
     "en": ``,
@@ -685,10 +685,10 @@ const translations = {
     "es": `2Smart HR`,
     "fr": `2Smart HR`
   }, "t37": {
-    "pt": ` A solução <span>definitiva</span> para sua <div class="underline"> empresa</div>`,
-    "en": ` The <span>definitive</span> solution for your <div class="underline">company</div>`,
-    "es": ` La solución <span>definitiva</span> para su <div class="underline">empresa</div>`,
-    "fr": ` La solution <span>définitive</span> pour votre <div class="underline">entreprise</div>`
+    "pt": ` A solução que <span>evolui</span> com a sua  <div class="underline"> empresa</div>`,
+    "en": ` The solution that <span>evolves</span> with your <div class="underline"> company</div>`,
+    "es": ` La solución que <span>evoluciona</span> con su <div class="underline"> empresa</div>`,
+    "fr": ` La solution qui <span>évolue</span> avec votre <div class="underline"> entreprise</div>`,
   },
   "t38": {
     "pt": ` +650 empresas e +30.800 colaboradores <br> usam o nosso software`,
