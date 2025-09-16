@@ -2933,7 +2933,7 @@ body ol.mega-menu menu .app-image img{
 
  body .modules-section .imgb1 img {
    padding-right: 20px !important;
-   margin-top: 50px !important;
+   margin-top: 10px !important;
  }
 
 
@@ -2954,6 +2954,14 @@ body ol.mega-menu menu .app-image img{
    border-bottom-right-radius: 20px;
 
  }
+
+
+body #wa-widget-send-button{
+    width:65px !important;
+    height:50px !important;
+    padding:0px !important;
+    max-width:50px !important; 
+}
 
 
  body .modules-section .image.imgdb2 img {
@@ -3560,7 +3568,7 @@ body ol.mega-menu menu .app-image img{
  }
 
  body .price-area .prices-area-features article .image {
-   max-width: 700px;
+   max-width:630px;
    margin-right: 40px;
    min-width:500px;
  }
@@ -3773,13 +3781,32 @@ body .service-details .service-header-image.sv6 {
  
 
 body .service-details .service-header-image.sv7 {
-   background: url(" https://ik.imagekit.io/fsobpyaa5i/myravey-workshop-_%20(2).png");
+   background: url("https://ik.imagekit.io/fsobpyaa5i/myravey-workshop-_%20(2).png");
    background-position: center;
    background-repeat: no-repeat;
    background-size: contain ;
    background-color: rgb(242, 244, 252) ;
  }
 
+
+
+ body .service-details .service-header-image.sv8 {
+   background: url(" https://ik.imagekit.io/fsobpyaa5i/Group%205.png");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain ;
+   background-color: rgb(242, 244, 252) ;
+ }
+
+
+
+
+
+
+
+ body .wa-chat-box-poweredby a{
+   display: none !important;
+}
 
 
  

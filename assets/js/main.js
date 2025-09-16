@@ -483,7 +483,7 @@ const translations = {
     "fr": "2Smart Logiciel de"
   },
   "t4": {
-    "pt": " gestão de assiduiade",
+    "pt": " gestão de assiduidade",
     "en": " Attendance ",
     "es": " gestión de asistencias",
     "fr": " gestion des présences"
@@ -518,12 +518,12 @@ const translations = {
     "es": `Simplifique su gestión de recursos humanos con  <span>2Smart</span>`,
     "fr": `Simplifiez votre gestion des ressources humaines avec  <span>2Smart</span>`
   },
-  "t10": {
-    "pt": `Gestão de Feriados e Tolerâncias`,
-    "en": `Holiday and Allowance Management`,
-    "es": `Gestión de Festivos y Tolerancias`,
-    "fr": `Gestion des congés et tolérances`
-  },
+"t10": {
+  "pt": "Gestão de Turnos e Escalas",
+  "en": "Shift and Schedule Management",
+  "es": "Gestión de Turnos y Horarios",
+  "fr": "Gestion des Quarts et des Plannings"
+},
   "t11": {
     "pt": `Domínio Personalizado para  Empresas`,
     "en": `Custom Domain for Companies`,
@@ -995,10 +995,10 @@ const translations = {
 
   /** Prices */
   "t85": {
-    "pt": "Gestão de assiduidade e equipas desde <br><span class='price-box' >1€ / mês</span> por colaborador",
-    "en": "Attendance and team management from <br><span class='price-box'>1€ / month</span> per employee",
-    "es": "Gestión de asistencias y equipos desde <br><span>1€ / mes</span> por empleado",
-    "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>1€ / mois</span> par collaborateur"
+    "pt": "Gestão de assiduidade e equipas desde <br><span class='price-box' >1,0 € / mês</span> por colaborador",
+    "en": "Attendance and team management from <br><span class='price-box'>1,0 € / month</span> per employee",
+    "es": "Gestión de asistencias y equipos desde <br><span>1,0 € / mes</span> por empleado",
+    "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>1,0 € / mois</span> par collaborateur"
   },
   "t86": {
     "pt": "Gestão Centralizada em Cloud com Terminais Integrados",
