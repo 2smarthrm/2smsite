@@ -88,7 +88,7 @@
                                                         <i class="fa-solid fa-caret-down"></i>
                                                         <i class="fa-solid fa-caret-up"></i>
                                                     </a>
-                                                      <ol class="mega-menu">
+                                                       <ol class="mega-menu">
                                                         <div class="formation-box">
                                                             <h5 class="active"><span>Gestão de Assiduidade </span>
                                                                 <div><i class="fa-solid fa-angle-right"></i></div>
@@ -101,6 +101,10 @@
                                                             </h5>
                                                             <h5>
                                                                 <span>Geofencing e Geolocalização</span>
+                                                                <div><i class="fa-solid fa-angle-right"></i></div>
+                                                            </h5>
+                                                            <h5>
+                                                                <span>Terminais de ponto</span>
                                                                 <div><i class="fa-solid fa-angle-right"></i></div>
                                                             </h5>
                                                         </div>
@@ -136,7 +140,10 @@
                                                                         <a href="holidays_and_absences.html">
                                                                             <h5>Gestão de Férias e Faltas</h5>
                                                                         </a>
-                                                                        <p>Simplifique o processo de marcação e aprovação de férias, acompanhe faltas em tempo real e garanta uma gestão clara e transparente.</p>
+                                                                        <p>Simplifique o processo de marcação e
+                                                                            aprovação de férias, acompanhe faltas em
+                                                                            tempo real e garanta uma gestão clara e
+                                                                            transparente.</p>
                                                                         <a href="holidays_and_absences.html">Saber mais
                                                                             <i class="fa-solid fa-arrow-right"></i></a>
                                                                     </div>
@@ -337,16 +344,53 @@
                                                                             <h5>Geofencing e Geolocalização</h5>
                                                                         </a>
                                                                         <p>
-                                                                           Com o 2Smart HR, a Gestão de Assiduidade torna-se mais eficiente e transparente. Através de soluções como o geofencing, 
-                                                                           a sua empresa garante controlo preciso de presenças, reduz tarefas manuais e promove a autonomia no dia a dia.
+                                                                            Com o 2Smart HR, a Gestão de Assiduidade
+                                                                            torna-se mais eficiente e transparente.
+                                                                            Através de soluções como o geofencing,
+                                                                            a sua empresa garante controlo preciso de
+                                                                            presenças, reduz tarefas manuais e promove a
+                                                                            autonomia no dia a dia.
                                                                         </p>
-                                                                        <a href="geofencing_and_geolocation.html">Saber mais <i class="fa-solid fa-arrow-right"></i></a>
+                                                                        <a href="geofencing_and_geolocation.html">Saber
+                                                                            mais <i
+                                                                                class="fa-solid fa-arrow-right"></i></a>
                                                                     </div>
                                                                 </article>
                                                                 <div class="app-image">
-                                                                  
+
                                                                 </div>
                                                             </menu>
+
+
+
+
+
+
+
+                                                            <menu class="menu-app">
+                                                                <article class="col">
+                                                                    <a href="Terminals.html">
+                                                                        <div class="icon">
+                                                                            <i class="fa-solid fa-fingerprint"></i>
+                                                                        </div>
+                                                                    </a>
+                                                                    <div class="text-block">
+                                                                        <a href="Terminals.html">
+                                                                            <h5>Terminais biométricos</h5>
+                                                                        </a>
+                                                                        <p>
+                                                                             Os terminais biométricos 2Smart HR garantem registo de assiduidade seguro, integrado e em conformidade legal. 
+                                                                             Com biometria (Reconhecimento facial e impressão digital ) e relatórios que simplificam a gestão de equipas e reduzem custos.
+                                                                        </p>
+                                                                        <a href="Terminals.html">Saber mais <i
+                                                                                class="fa-solid fa-arrow-right"></i></a>
+                                                                    </div>
+                                                                </article>
+                                                                <div class="app-image">
+
+                                                                </div>
+                                                            </menu>
+
 
 
 
@@ -1260,8 +1304,56 @@
         </div>
     </div>
 
-    <script src="https://static.elfsight.com/platform/platform.js" async></script>
-    <div translate="no" class="elfsight-app-e7374265-fa21-4619-9203-ee2053f490bc" data-elfsight-app-lazy></div>
+    
+    
+ <script>
+  var url = "https://cdn.waplus.io/waplus-crm/settings/ossembed.js";
+  var s = document.createElement("script");
+  s.type = "text/javascript";
+  s.async = true;
+  s.src = url;
+
+  var options = {
+    enabled: true,
+    chatButtonSetting: {
+      backgroundColor: "#16BE45",
+      ctaText: "",
+      borderRadius: "10000",
+      marginLeft: "20",
+      marginBottom: "20",
+      marginRight: "20",
+      position: "right",
+      textColor: "#ffffff",
+      phoneNumber: "",
+      messageText: "👋🏻Hello",
+      trackClick: true
+    },
+    brandSetting: {
+      brandName: "2Smart HR",
+      brandSubTitle: "Responde em 24 Horas",
+      headerTextColor: "#fff",
+      brandImg: "https://ik.imagekit.io/fsobpyaa5i/2Smart%20(1).png?updatedAt=1757952794702",
+      welcomeText:
+        "Que bom falar com você!\nSe tiver dúvidas ou quiser mais informações, é só chamar no chat ! 😊",
+      messageText: "Olá gostaria de saber mais sobre o 2Smart HR ",
+      backgroundColor: "#0a5f54",
+      ctaText: "Conversar no WhatsApp",
+      borderRadius: "1000",
+      autoShow: false,
+      btnColor: "#16BE45",
+      phoneNumber: "+351938911692",
+      trackClick: true
+    }
+  };
+
+  s.onload = function () {
+    CreateWhatsappChatWidget(options);
+  };
+
+  var x = document.getElementsByTagName("script")[0];
+  x.parentNode.insertBefore(s, x);
+</script> 
+
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <div id="google_translate_element"></div>
