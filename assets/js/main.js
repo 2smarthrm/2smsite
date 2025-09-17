@@ -995,10 +995,10 @@ const translations = {
 
   /** Prices */
   "t85": {
-    "pt": "Gestão de assiduidade e equipas desde <br><span class='price-box' >1,00 € / mês</span> por colaborador",
-    "en": "Attendance and team management from <br><span class='price-box'>1,00 € / month</span> per employee",
-    "es": "Gestión de asistencias y equipos desde <br><span>1,00 € / mes</span> por empleado",
-    "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>1,00 € / mois</span> par collaborateur"
+    "pt": "Gestão de assiduidade e equipas desde <br><span class='price-box' >1,0 € / mês</span> por colaborador",
+    "en": "Attendance and team management from <br><span class='price-box'>1,0 € / month</span> per employee",
+    "es": "Gestión de asistencias y equipos desde <br><span>1,0 € / mes</span> por empleado",
+    "fr": "Gestion des présences et des équipes à partir de <br><span class='price-box'>1,0 € / mois</span> par collaborateur"
   },
   "t86": {
     "pt": "Gestão Centralizada em Cloud com Terminais Integrados",
@@ -1125,10 +1125,10 @@ const translations = {
   "fr": "Organisation simple et efficace"
 },
 "t106": {
-  "pt": "Terminais biométricos",
-  "en": "Biometric terminals",
-  "es": "Terminales biométricos",
-  "fr": "Terminaux biométriques"
+  "pt": "Terminais de ponto",
+  "en": "Time & Attendance Terminals",
+  "es": "Terminales de control horario",
+  "fr": "Terminaux de pointage"
 },
 "t107": {
   "pt": "Integração com Terminais de Ponto",
