@@ -4085,3 +4085,8 @@ body .service-details .service-header-image.sv7 {
  body .details-blog .inner-box .lower-content  li{
      white-space:normal !important;
  }
+
+
+ body .industries-block:hover h3{
+    color:#ffff !important;
+ }
