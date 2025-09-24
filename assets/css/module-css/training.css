@@ -6,10 +6,17 @@
   background: #E6F0F2;
 }
 
+
+.training-section .training-block-one:nth-child(2){
+   border-left:0px !important;
+   border-right:0px !important;
+}
+
 .training-block-one{
   position: relative;
   float: left;
-  width:33.3%;
+  width:33.33333%;
+  border:8px solid #fff;
 }
 
 .training-block-one .inner-box{
