@@ -76,7 +76,26 @@
   .dueal-section.alternat-3 .content_block_three .content-box {
     margin-bottom: 30px;
   }
+  body .fancybox-content,
+  body .fancybox-content iframe{
+     max-height:400px !important;
+  }
+   
 
+body .inner-container.justify-content-between{
+   padding:0px 20px !important;
+   padding-bottom:60px !important;
+   justify-content: center !important;
+}
+
+  body .inner-container.justify-content-between{
+      flex-direction: column !important;
+  }
+
+   body .inner-container.justify-content-between .training-block-one{ 
+    width:100% !important;
+    margin:20px 0px !important; 
+  }
 
   body .service-details .service-header-image{
       background: unset !important;
